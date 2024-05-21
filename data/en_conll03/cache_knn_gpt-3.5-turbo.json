@@ -1,0 +1,3824 @@
+{
+  "169": [
+    {
+      "span": "Afghanistan",
+      "type": "LOC"
+    },
+    {
+      "span": "United Arab Emirates",
+      "type": "LOC"
+    },
+    {
+      "span": "Russian",
+      "type": "MISC"
+    },
+    {
+      "span": "Taleban",
+      "type": "ORG"
+    },
+    {
+      "span": "Afghan",
+      "type": "MISC"
+    },
+    {
+      "span": "Abu Dhabi",
+      "type": "LOC"
+    }
+  ],
+  "218": [
+    {
+      "span": "AD-DIYAR",
+      "type": "ORG"
+    }
+  ],
+  "286": [
+    {
+      "span": "Finland",
+      "type": "LOC"
+    },
+    {
+      "span": "NCB",
+      "type": "ORG"
+    },
+    {
+      "span": "Thursday",
+      "type": "MISC"
+    }
+  ],
+  "468": [
+    {
+      "span": "Celtic",
+      "type": "ORG"
+    },
+    {
+      "span": "Jackie McNamara",
+      "type": "PER"
+    }
+  ],
+  "747": [
+    {
+      "span": "Michael Chang",
+      "type": "PER"
+    },
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    }
+  ],
+  "794": [
+    {
+      "span": "New York",
+      "type": "ORG"
+    }
+  ],
+  "1697": [
+    {
+      "span": "rates",
+      "type": "MISC"
+    }
+  ],
+  "2145": [
+    {
+      "span": "Pittsburgh",
+      "type": "ORG"
+    },
+    {
+      "span": "HOUSTON",
+      "type": "ORG"
+    }
+  ],
+  "2459": [
+    {
+      "span": "Germany",
+      "type": "LOC"
+    },
+    {
+      "span": "Lars Riedel",
+      "type": "PER"
+    }
+  ],
+  "2807": [
+    {
+      "span": "Amazon",
+      "type": "LOC"
+    }
+  ],
+  "3425": [
+    {
+      "span": "Belgian",
+      "type": "MISC"
+    },
+    {
+      "span": "Friday",
+      "type": "MISC"
+    }
+  ],
+  "3461": [
+    {
+      "span": "storm",
+      "type": "MISC"
+    }
+  ],
+  "4743": [
+    {
+      "span": "Rubens Barrichello",
+      "type": "PER"
+    },
+    {
+      "span": "Brazil",
+      "type": "LOC"
+    },
+    {
+      "span": "Jordan",
+      "type": "ORG"
+    }
+  ],
+  "4816": [
+    {
+      "span": "Akira Ryo",
+      "type": "PER"
+    },
+    {
+      "span": "Japan",
+      "type": "LOC"
+    },
+    {
+      "span": "Kawasaki",
+      "type": "ORG"
+    }
+  ],
+  "5217": [
+    {
+      "span": "Australian Rules",
+      "type": "MISC"
+    }
+  ],
+  "5312": [
+    {
+      "span": "OB",
+      "type": "ORG"
+    },
+    {
+      "span": " ",
+      "type": "MISC"
+    },
+    {
+      "span": "Lotte",
+      "type": "ORG"
+    },
+    {
+      "span": " ",
+      "type": "MISC"
+    }
+  ],
+  "5460": [
+    {
+      "span": "Domingos",
+      "type": "PER"
+    }
+  ],
+  "5711": [
+    {
+      "span": "Volendam",
+      "type": "ORG"
+    }
+  ],
+  "5723": [
+    {
+      "span": "PSV Eindhoven",
+      "type": "ORG"
+    },
+    {
+      "span": "Faber",
+      "type": "PER"
+    },
+    {
+      "span": "Nilis",
+      "type": "PER"
+    },
+    {
+      "span": "Petrovic",
+      "type": "PER"
+    }
+  ],
+  "5768": [
+    {
+      "span": "Roda JC Kerkrade",
+      "type": "ORG"
+    }
+  ],
+  "6561": [
+    {
+      "span": "LIBERIA",
+      "type": "LOC"
+    },
+    {
+      "span": "Costa Rica",
+      "type": "LOC"
+    }
+  ],
+  "6849": [
+    {
+      "span": "Botafogo",
+      "type": "ORG"
+    }
+  ],
+  "6922": [
+    {
+      "span": "U.S. Open",
+      "type": "MISC"
+    }
+  ],
+  "7328": [
+    {
+      "span": "Sergei Yastrzhembsky",
+      "type": "PER"
+    },
+    {
+      "span": "Kremlin",
+      "type": "LOC"
+    },
+    {
+      "span": "Moscow",
+      "type": "LOC"
+    }
+  ],
+  "7406": [
+    {
+      "span": "Wisinga",
+      "type": "PER"
+    },
+    {
+      "span": "Europe",
+      "type": "LOC"
+    }
+  ],
+  "7596": [],
+  "7613": [
+    {
+      "span": "P1020",
+      "type": "MISC"
+    }
+  ],
+  "8522": [
+    {
+      "span": "Cleveland",
+      "type": "ORG"
+    }
+  ],
+  "8699": [
+    {
+      "span": "VfB Stuttgart",
+      "type": "ORG"
+    }
+  ],
+  "8809": [
+    {
+      "span": "company",
+      "type": "ORG"
+    }
+  ],
+  "9205": [
+    {
+      "span": "Baghdad",
+      "type": "LOC"
+    },
+    {
+      "span": "Iraq",
+      "type": "LOC"
+    },
+    {
+      "span": "U.N.",
+      "type": "ORG"
+    },
+    {
+      "span": "Baghdad",
+      "type": "LOC"
+    },
+    {
+      "span": "U.N",
+      "type": "ORG"
+    }
+  ],
+  "9412": [
+    {
+      "span": "Veerakesari",
+      "type": "ORG"
+    }
+  ],
+  "9735": [
+    {
+      "span": "Forsa",
+      "type": "ORG"
+    }
+  ],
+  "9853": [
+    {
+      "span": "Japanese",
+      "type": "MISC"
+    },
+    {
+      "span": "July",
+      "type": "MISC"
+    },
+    {
+      "span": "Japan",
+      "type": "LOC"
+    },
+    {
+      "span": "Aluminium Federation",
+      "type": "ORG"
+    },
+    {
+      "span": "Tuesday",
+      "type": "MISC"
+    }
+  ],
+  "10191": [
+    {
+      "span": "West Bromwich",
+      "type": "ORG"
+    }
+  ],
+  "10378": [
+    {
+      "span": "Medvedev",
+      "type": "PER"
+    }
+  ],
+  "10652": [
+    {
+      "span": "Pires",
+      "type": "PER"
+    },
+    {
+      "span": "French",
+      "type": "MISC"
+    },
+    {
+      "span": "Aime Jacquet",
+      "type": "PER"
+    },
+    {
+      "span": "Mexico",
+      "type": "LOC"
+    },
+    {
+      "span": "Parc des Princes",
+      "type": "LOC"
+    }
+  ],
+  "10667": [
+    {
+      "span": "Amsterdam",
+      "type": "LOC"
+    }
+  ],
+  "11239": [
+    {
+      "span": "parliament",
+      "type": "ORG"
+    }
+  ],
+  "11767": [
+    {
+      "span": "Sale Amount",
+      "type": "MISC"
+    }
+  ],
+  "12246": [
+    {
+      "span": "Sorensen",
+      "type": "PER"
+    }
+  ],
+  "12304": [
+    {
+      "span": "Scoreboard",
+      "type": "MISC"
+    }
+  ],
+  "12352": [
+    {
+      "span": "Olaf Ludwig",
+      "type": "PER"
+    },
+    {
+      "span": "Germany",
+      "type": "LOC"
+    },
+    {
+      "span": "Telekom",
+      "type": "ORG"
+    }
+  ],
+  "12467": [
+    {
+      "span": "Els Callens",
+      "type": "PER"
+    },
+    {
+      "span": "Belgium",
+      "type": "LOC"
+    },
+    {
+      "span": "Annabel Ellwood",
+      "type": "PER"
+    },
+    {
+      "span": "Australia",
+      "type": "LOC"
+    }
+  ],
+  "12689": [
+    {
+      "span": "Jesse Owens",
+      "type": "PER"
+    }
+  ],
+  "12974": [
+    {
+      "span": "Banharn",
+      "type": "PER"
+    },
+    {
+      "span": "General Chatichai Choonhavan",
+      "type": "PER"
+    },
+    {
+      "span": "February 1991",
+      "type": "MISC"
+    }
+  ],
+  "13381": [
+    {
+      "span": "Turkey",
+      "type": "LOC"
+    },
+    {
+      "span": "Israel",
+      "type": "LOC"
+    },
+    {
+      "span": "Iranian",
+      "type": "MISC"
+    },
+    {
+      "span": "Necmettin Erbakan",
+      "type": "PER"
+    }
+  ],
+  "13722": [
+    {
+      "span": "Simex Nikkei futures",
+      "type": "ORG"
+    },
+    {
+      "span": "Thursday",
+      "type": "MISC"
+    }
+  ],
+  "13780": [
+    {
+      "span": "September 30 , 1996",
+      "type": "MISC"
+    }
+  ],
+  "13944": [
+    {
+      "span": "Attendance",
+      "type": "MISC"
+    },
+    {
+      "span": " : ",
+      "type": "MISC"
+    },
+    {
+      "span": "1,800",
+      "type": "MISC"
+    }
+  ],
+  "170": [
+    {
+      "span": "UAE",
+      "type": "LOC"
+    }
+  ],
+  "908": [
+    {
+      "span": "Brussels",
+      "type": "LOC"
+    }
+  ],
+  "1378": [
+    {
+      "span": "Sudanese",
+      "type": "MISC"
+    },
+    {
+      "span": "Turabi",
+      "type": "PER"
+    },
+    {
+      "span": "Mubarak",
+      "type": "PER"
+    }
+  ],
+  "1518": [
+    {
+      "span": "Company",
+      "type": "ORG"
+    },
+    {
+      "span": "Broker",
+      "type": "ORG"
+    }
+  ],
+  "1540": [
+    {
+      "span": "Russian",
+      "type": "MISC"
+    },
+    {
+      "span": "Reuters",
+      "type": "ORG"
+    },
+    {
+      "span": "Erdmann",
+      "type": "PER"
+    },
+    {
+      "span": "Ischinger",
+      "type": "PER"
+    },
+    {
+      "span": "Moscow",
+      "type": "LOC"
+    }
+  ],
+  "1656": [
+    {
+      "span": "British",
+      "type": "MISC"
+    },
+    {
+      "span": "Mother Teresa",
+      "type": "PER"
+    }
+  ],
+  "1755": [
+    {
+      "span": "Jakarta",
+      "type": "LOC"
+    }
+  ],
+  "2760": [
+    {
+      "span": "foreign assets",
+      "type": "MISC"
+    }
+  ],
+  "2800": [
+    {
+      "span": "Indian",
+      "type": "MISC"
+    }
+  ],
+  "2910": [
+    {
+      "span": "Tomorrow",
+      "type": "MISC"
+    }
+  ],
+  "3153": [
+    {
+      "span": "Analysts",
+      "type": "MISC"
+    },
+    {
+      "span": "Dutch PTT",
+      "type": "ORG"
+    }
+  ],
+  "3285": [
+    {
+      "span": "metal",
+      "type": "MISC"
+    }
+  ],
+  "3810": [
+    {
+      "span": "Ssangbangwool",
+      "type": "ORG"
+    },
+    {
+      "span": "LG",
+      "type": "ORG"
+    }
+  ],
+  "3867": [
+    {
+      "span": "Pittsburgh",
+      "type": "ORG"
+    }
+  ],
+  "3889": [
+    {
+      "span": "NEW YORK",
+      "type": "ORG"
+    },
+    {
+      "span": " Oakland",
+      "type": "LOC"
+    }
+  ],
+  "4057": [
+    {
+      "span": "18,000",
+      "type": "MISC"
+    }
+  ],
+  "4069": [
+    {
+      "span": "1860 Munich",
+      "type": "ORG"
+    },
+    {
+      "span": "Borussia Dortmund",
+      "type": "ORG"
+    }
+  ],
+  "4413": [
+    {
+      "span": "Belgian",
+      "type": "LOC"
+    },
+    {
+      "span": "Dutroux",
+      "type": "PER"
+    }
+  ],
+  "4661": [
+    {
+      "span": "Leading",
+      "type": "MISC"
+    }
+  ],
+  "4815": [
+    {
+      "span": "Carl Fogarty",
+      "type": "PER"
+    },
+    {
+      "span": "Britain",
+      "type": "LOC"
+    },
+    {
+      "span": "Honda",
+      "type": "ORG"
+    }
+  ],
+  "4899": [
+    {
+      "span": "Workington",
+      "type": "ORG"
+    }
+  ],
+  "5297": [
+    {
+      "span": "Women",
+      "type": "MISC"
+    }
+  ],
+  "5555": [
+    {
+      "span": "Werder Bremen",
+      "type": "ORG"
+    }
+  ],
+  "5752": [
+    {
+      "span": "Saturday",
+      "type": "MISC"
+    }
+  ],
+  "5841": [
+    {
+      "span": "John Hart",
+      "type": "PER"
+    },
+    {
+      "span": "Jim Bolger",
+      "type": "PER"
+    }
+  ],
+  "6339": [
+    {
+      "span": "Halftime",
+      "type": "MISC"
+    }
+  ],
+  "6443": [
+    {
+      "span": "Worcestershire",
+      "type": "ORG"
+    },
+    {
+      "span": "K. Spiring",
+      "type": "PER"
+    },
+    {
+      "span": "A. Giles",
+      "type": "PER"
+    }
+  ],
+  "6514": [
+    {
+      "span": "St Helens",
+      "type": "LOC"
+    }
+  ],
+  "6900": [
+    {
+      "span": "Hanwha",
+      "type": "ORG"
+    }
+  ],
+  "7333": [
+    {
+      "span": "president 's administration",
+      "type": "MISC"
+    }
+  ],
+  "7472": [
+    {
+      "span": "Melbourne",
+      "type": "LOC"
+    }
+  ],
+  "7679": [
+    {
+      "span": "personal",
+      "type": "MISC"
+    },
+    {
+      "span": "religious",
+      "type": "MISC"
+    }
+  ],
+  "7939": [
+    {
+      "span": "Thai Prime Minister Banharn Silpa-archa",
+      "type": "PER"
+    }
+  ],
+  "8256": [
+    {
+      "span": "Colchester",
+      "type": "ORG"
+    }
+  ],
+  "8483": [
+    {
+      "span": "Thomas Enqvist",
+      "type": "PER"
+    },
+    {
+      "span": "Sweden",
+      "type": "LOC"
+    },
+    {
+      "span": "Stephane Simian",
+      "type": "PER"
+    },
+    {
+      "span": "France",
+      "type": "LOC"
+    }
+  ],
+  "8635": [
+    {
+      "span": "Chang",
+      "type": "PER"
+    },
+    {
+      "span": "Brazilian",
+      "type": "MISC"
+    }
+  ],
+  "8733": [
+    {
+      "span": "European",
+      "type": "MISC"
+    }
+  ],
+  "9211": [
+    {
+      "span": "U.N.",
+      "type": "ORG"
+    },
+    {
+      "span": "Iraq",
+      "type": "LOC"
+    },
+    {
+      "span": "Kuwait",
+      "type": "LOC"
+    },
+    {
+      "span": "1990",
+      "type": "MISC"
+    }
+  ],
+  "9494": [
+    {
+      "span": "--",
+      "type": "MISC"
+    },
+    {
+      "span": "Karachi",
+      "type": "LOC"
+    },
+    {
+      "span": "newsroom",
+      "type": "ORG"
+    },
+    {
+      "span": "9221-5685192",
+      "type": "MISC"
+    }
+  ],
+  "10773": [
+    {
+      "span": "Metz",
+      "type": "ORG"
+    }
+  ],
+  "11138": [
+    {
+      "span": "Jerome Egurugbe",
+      "type": "PER"
+    },
+    {
+      "span": "O.K. Likkason",
+      "type": "PER"
+    },
+    {
+      "span": "Elisha Shamay",
+      "type": "PER"
+    },
+    {
+      "span": "William Istafanus",
+      "type": "PER"
+    },
+    {
+      "span": "Academic Staff Union of Universities",
+      "type": "ORG"
+    },
+    {
+      "span": "Constitutional Rights Project",
+      "type": "ORG"
+    },
+    {
+      "span": "ASUU",
+      "type": "ORG"
+    }
+  ],
+  "11242": [
+    {
+      "span": "Aleksander Lebed",
+      "type": "PER"
+    },
+    {
+      "span": "Polish",
+      "type": "MISC"
+    },
+    {
+      "span": "Dariusz Rosati",
+      "type": "PER"
+    },
+    {
+      "span": "Chechnya",
+      "type": "LOC"
+    }
+  ],
+  "11586": [
+    {
+      "span": "ACC",
+      "type": "ORG"
+    },
+    {
+      "span": "Palkhivala",
+      "type": "PER"
+    },
+    {
+      "span": "Indian",
+      "type": "MISC"
+    }
+  ],
+  "12088": [
+    {
+      "span": "SOUTH CHINA MORNING POST",
+      "type": "ORG"
+    },
+    {
+      "span": "New Zealand",
+      "type": "LOC"
+    }
+  ],
+  "13031": [
+    {
+      "span": "Year A-rated Gen'l Obligation",
+      "type": "ORG"
+    }
+  ],
+  "13145": [
+    {
+      "span": "Health officials",
+      "type": "ORG"
+    }
+  ],
+  "13271": [
+    {
+      "span": "Dreyfus Strategic Munis",
+      "type": "ORG"
+    }
+  ],
+  "13444": [
+    {
+      "span": "Keane",
+      "type": "PER"
+    },
+    {
+      "span": "ING",
+      "type": "ORG"
+    }
+  ],
+  "13459": [
+    {
+      "span": "President Bill Clinton",
+      "type": "PER"
+    }
+  ],
+  "13639": [
+    {
+      "span": "Finns",
+      "type": "MISC"
+    }
+  ],
+  "364": [
+    {
+      "span": "Mind Games",
+      "type": "MISC"
+    }
+  ],
+  "403": [
+    {
+      "span": "Dalglish",
+      "type": "PER"
+    },
+    {
+      "span": "Blackburn",
+      "type": "ORG"
+    }
+  ],
+  "1334": [
+    {
+      "span": "Beijing",
+      "type": "LOC"
+    }
+  ],
+  "1628": [
+    {
+      "span": "Mother Teresa",
+      "type": "PER"
+    },
+    {
+      "span": "Calcutta",
+      "type": "LOC"
+    }
+  ],
+  "1753": [
+    {
+      "span": "Indonesian",
+      "type": "LOC"
+    }
+  ],
+  "3225": [
+    {
+      "span": "Toyota Australia",
+      "type": "ORG"
+    },
+    {
+      "span": "Melbourne",
+      "type": "LOC"
+    },
+    {
+      "span": "Friday",
+      "type": "MISC"
+    },
+    {
+      "span": "Monday",
+      "type": "MISC"
+    }
+  ],
+  "4022": [
+    {
+      "span": "Vitesse Arnhem",
+      "type": "ORG"
+    }
+  ],
+  "4337": [
+    {
+      "span": "America",
+      "type": "LOC"
+    },
+    {
+      "span": "Clinton",
+      "type": "PER"
+    },
+    {
+      "span": "Republican",
+      "type": "MISC"
+    },
+    {
+      "span": "House",
+      "type": "MISC"
+    },
+    {
+      "span": "Senate",
+      "type": "MISC"
+    }
+  ],
+  "4365": [
+    {
+      "span": "Bosnian",
+      "type": "MISC"
+    },
+    {
+      "span": "September 14",
+      "type": "MISC"
+    },
+    {
+      "span": "October",
+      "type": "MISC"
+    }
+  ],
+  "4403": [
+    {
+      "span": "Dutroux",
+      "type": "PER"
+    },
+    {
+      "span": "Charleroi",
+      "type": "LOC"
+    }
+  ],
+  "4736": [
+    {
+      "span": "Ukyo Katayama",
+      "type": "PER"
+    },
+    {
+      "span": "Japan",
+      "type": "LOC"
+    },
+    {
+      "span": "Tyrrell",
+      "type": "ORG"
+    }
+  ],
+  "5097": [
+    {
+      "span": "Polish",
+      "type": "MISC"
+    }
+  ],
+  "5200": [
+    {
+      "span": "Spartak Moscow",
+      "type": "ORG"
+    }
+  ],
+  "5477": [
+    {
+      "span": "Gabriel Batistuta",
+      "type": "PER"
+    },
+    {
+      "span": "Fiorentina",
+      "type": "ORG"
+    },
+    {
+      "span": "Italian Cup",
+      "type": "MISC"
+    },
+    {
+      "span": "Supercup",
+      "type": "MISC"
+    },
+    {
+      "span": "Milan",
+      "type": "ORG"
+    },
+    {
+      "span": "serie A",
+      "type": "MISC"
+    }
+  ],
+  "5567": [
+    {
+      "span": "for",
+      "type": "MISC"
+    },
+    {
+      "span": "against",
+      "type": "MISC"
+    }
+  ],
+  "5754": [
+    {
+      "span": "Willem II Tilburg",
+      "type": "ORG"
+    },
+    {
+      "span": "Fortuna Sittard",
+      "type": "ORG"
+    }
+  ],
+  "5819": [
+    {
+      "span": "Fitzpatrick",
+      "type": "PER"
+    },
+    {
+      "span": "New Zealand",
+      "type": "LOC"
+    }
+  ],
+  "6254": [
+    {
+      "span": "Gilbertson",
+      "type": "PER"
+    },
+    {
+      "span": "Gencor",
+      "type": "ORG"
+    }
+  ],
+  "6644": [
+    {
+      "span": "There",
+      "type": "MISC"
+    }
+  ],
+  "7723": [
+    {
+      "span": "Senate",
+      "type": "ORG"
+    },
+    {
+      "span": "1987",
+      "type": "MISC"
+    },
+    {
+      "span": "Midwest",
+      "type": "LOC"
+    },
+    {
+      "span": "Democratic",
+      "type": "MISC"
+    },
+    {
+      "span": "Republican",
+      "type": "MISC"
+    },
+    {
+      "span": "Senate",
+      "type": "ORG"
+    }
+  ],
+  "7749": [
+    {
+      "span": "Eurograde",
+      "type": "MISC"
+    },
+    {
+      "span": "Amsterdam-Rotterdam",
+      "type": "LOC"
+    },
+    {
+      "span": "ARA",
+      "type": "LOC"
+    },
+    {
+      "span": "Amsterdam-Rotterdam",
+      "type": "LOC"
+    },
+    {
+      "span": "ARA",
+      "type": "LOC"
+    }
+  ],
+  "8681": [
+    {
+      "span": "0-1 .",
+      "type": "MISC"
+    }
+  ],
+  "9082": [
+    {
+      "span": "Quarracino",
+      "type": "PER"
+    }
+  ],
+  "9116": [
+    {
+      "span": "Nicaraguan",
+      "type": "LOC"
+    },
+    {
+      "span": "Tuesday",
+      "type": "MISC"
+    }
+  ],
+  "9139": [
+    {
+      "span": "Fatima Cristina",
+      "type": "PER"
+    },
+    {
+      "span": "Sao Paulo",
+      "type": "LOC"
+    },
+    {
+      "span": "newsroom",
+      "type": "ORG"
+    }
+  ],
+  "9208": [
+    {
+      "span": "Baghdad",
+      "type": "LOC"
+    },
+    {
+      "span": "Iraq-U.N.",
+      "type": "MISC"
+    }
+  ],
+  "9689": [
+    {
+      "span": "Financial Data",
+      "type": "MISC"
+    }
+  ],
+  "9842": [
+    {
+      "span": "Two children",
+      "type": "MISC"
+    },
+    {
+      "span": "Sakai",
+      "type": "LOC"
+    }
+  ],
+  "9844": [
+    {
+      "span": "Sakai",
+      "type": "LOC"
+    }
+  ],
+  "9908": [
+    {
+      "span": "Arthur Levitt",
+      "type": "PER"
+    },
+    {
+      "span": "SEC",
+      "type": "ORG"
+    }
+  ],
+  "9937": [
+    {
+      "span": "SWP",
+      "type": "ORG"
+    },
+    {
+      "span": "hog farmers",
+      "type": "MISC"
+    }
+  ],
+  "10044": [
+    {
+      "span": "Erik Zabel",
+      "type": "PER"
+    },
+    {
+      "span": "Germany",
+      "type": "LOC"
+    },
+    {
+      "span": "Telekom",
+      "type": "ORG"
+    }
+  ],
+  "10731": [
+    {
+      "span": "Paris",
+      "type": "LOC"
+    }
+  ],
+  "10761": [
+    {
+      "span": "16,000",
+      "type": "MISC"
+    }
+  ],
+  "10982": [
+    {
+      "span": "Chile",
+      "type": "LOC"
+    },
+    {
+      "span": "Empresa Nacional del Petroleo",
+      "type": "ORG"
+    },
+    {
+      "span": "ENAP",
+      "type": "ORG"
+    },
+    {
+      "span": "Oriente",
+      "type": "MISC"
+    },
+    {
+      "span": "Escravos",
+      "type": "MISC"
+    },
+    {
+      "span": "Wednesday",
+      "type": "MISC"
+    }
+  ],
+  "11016": [
+    {
+      "span": "J.S. Bach",
+      "type": "PER"
+    },
+    {
+      "span": "Nobel Peace Prize",
+      "type": "MISC"
+    },
+    {
+      "span": "Brotherhood of Nations",
+      "type": "MISC"
+    }
+  ],
+  "11084": [
+    {
+      "span": "Ivorian",
+      "type": "MISC"
+    }
+  ],
+  "11191": [
+    {
+      "span": "Foreign Ministry",
+      "type": "ORG"
+    },
+    {
+      "span": "Greek",
+      "type": "MISC"
+    },
+    {
+      "span": "Albanian",
+      "type": "MISC"
+    },
+    {
+      "span": "Greece",
+      "type": "LOC"
+    },
+    {
+      "span": "Shehu",
+      "type": "PER"
+    },
+    {
+      "span": "Reuters",
+      "type": "ORG"
+    }
+  ],
+  "11194": [
+    {
+      "span": "Sofia",
+      "type": "LOC"
+    }
+  ],
+  "11830": [
+    {
+      "span": "Germans",
+      "type": "MISC"
+    }
+  ],
+  "12177": [
+    {
+      "span": "Tacis",
+      "type": "MISC"
+    }
+  ],
+  "12527": [
+    {
+      "span": "Kansas City",
+      "type": "ORG"
+    }
+  ],
+  "12687": [
+    {
+      "span": "Christie",
+      "type": "PER"
+    },
+    {
+      "span": "Olympic",
+      "type": "MISC"
+    }
+  ],
+  "12772": [
+    {
+      "span": "Dutch",
+      "type": "MISC"
+    },
+    {
+      "span": "Queen Beatrix",
+      "type": "PER"
+    },
+    {
+      "span": "S. Africa",
+      "type": "LOC"
+    }
+  ],
+  "12905": [
+    {
+      "span": "Buenos Aires",
+      "type": "LOC"
+    }
+  ],
+  "13093": [
+    {
+      "span": "Atlantic City",
+      "type": "LOC"
+    },
+    {
+      "span": "Showboat Hotel and Casino",
+      "type": "ORG"
+    }
+  ],
+  "13290": [
+    {
+      "span": "market",
+      "type": "MISC"
+    },
+    {
+      "span": "company",
+      "type": "MISC"
+    }
+  ],
+  "13304": [
+    {
+      "span": "Atlanta-based",
+      "type": "LOC"
+    }
+  ],
+  "13553": [
+    {
+      "span": "OM",
+      "type": "ORG"
+    }
+  ],
+  "13887": [
+    {
+      "span": "Lenzing",
+      "type": "ORG"
+    }
+  ],
+  "294": [
+    {
+      "span": "Bank of Finland",
+      "type": "ORG"
+    },
+    {
+      "span": "April",
+      "type": "MISC"
+    },
+    {
+      "span": "markka",
+      "type": "MISC"
+    }
+  ],
+  "416": [
+    {
+      "span": "English County Championship",
+      "type": "MISC"
+    }
+  ],
+  "1337": [
+    {
+      "span": "China",
+      "type": "LOC"
+    },
+    {
+      "span": "Hong Kong",
+      "type": "LOC"
+    },
+    {
+      "span": "British",
+      "type": "MISC"
+    }
+  ],
+  "1420": [
+    {
+      "span": "She",
+      "type": "PER"
+    }
+  ],
+  "1984": [
+    {
+      "span": "London",
+      "type": "LOC"
+    }
+  ],
+  "2086": [
+    {
+      "span": "Cleveland",
+      "type": "ORG"
+    }
+  ],
+  "2330": [
+    {
+      "span": "Brigita Bukovec",
+      "type": "PER"
+    },
+    {
+      "span": "Slovakia",
+      "type": "LOC"
+    }
+  ],
+  "2357": [
+    {
+      "span": "Carl Lewis",
+      "type": "PER"
+    },
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    }
+  ],
+  "2460": [
+    {
+      "span": "Anthony Washington",
+      "type": "PER"
+    },
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    }
+  ],
+  "2477": [
+    {
+      "span": "Hicham El Guerrouj",
+      "type": "PER"
+    },
+    {
+      "span": "Morocco",
+      "type": "LOC"
+    }
+  ],
+  "3601": [
+    {
+      "span": "Headingley",
+      "type": "LOC"
+    },
+    {
+      "span": "Yorkshire",
+      "type": "ORG"
+    },
+    {
+      "span": "C. White",
+      "type": "PER"
+    }
+  ],
+  "3724": [
+    {
+      "span": "Australia",
+      "type": "LOC"
+    }
+  ],
+  "3816": [
+    {
+      "span": "Hanwha",
+      "type": "ORG"
+    }
+  ],
+  "4084": [
+    {
+      "span": "Bayern Munich",
+      "type": "ORG"
+    }
+  ],
+  "4807": [
+    {
+      "span": "First race",
+      "type": "MISC"
+    }
+  ],
+  "4908": [
+    {
+      "span": "Yorkshire",
+      "type": "ORG"
+    }
+  ],
+  "4971": [
+    {
+      "span": "Reading",
+      "type": "ORG"
+    }
+  ],
+  "5582": [
+    {
+      "span": "Leading prize money",
+      "type": "MISC"
+    }
+  ],
+  "5761": [
+    {
+      "span": "Feyenoord Rotterdam",
+      "type": "ORG"
+    }
+  ],
+  "6128": [
+    {
+      "span": "Bourlet",
+      "type": "PER"
+    }
+  ],
+  "6362": [
+    {
+      "span": "Middlesbrough",
+      "type": "ORG"
+    }
+  ],
+  "7049": [
+    {
+      "span": "France",
+      "type": "LOC"
+    },
+    {
+      "span": "Sarah Pitkowski",
+      "type": "PER"
+    },
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    },
+    {
+      "span": "Meghann Shaughnessy",
+      "type": "PER"
+    }
+  ],
+  "7221": [
+    {
+      "span": "A. Campbell",
+      "type": "PER"
+    },
+    {
+      "span": "McGrath",
+      "type": "PER"
+    }
+  ],
+  "8179": [
+    {
+      "span": "two",
+      "type": "MISC"
+    }
+  ],
+  "8448": [
+    {
+      "span": "Marcelo Rios",
+      "type": "PER"
+    },
+    {
+      "span": "Chile",
+      "type": "LOC"
+    },
+    {
+      "span": "Andrei Pavel",
+      "type": "PER"
+    },
+    {
+      "span": "Romania",
+      "type": "LOC"
+    }
+  ],
+  "8578": [
+    {
+      "span": "Orioles",
+      "type": "ORG"
+    },
+    {
+      "span": "Yankees",
+      "type": "ORG"
+    }
+  ],
+  "8594": [
+    {
+      "span": "Thome",
+      "type": "PER"
+    },
+    {
+      "span": "Felipe Lira",
+      "type": "PER"
+    }
+  ],
+  "8620": [
+    {
+      "span": "MaliVai Washington",
+      "type": "PER"
+    },
+    {
+      "span": "Karim Alami",
+      "type": "PER"
+    },
+    {
+      "span": "Moroccan",
+      "type": "MISC"
+    }
+  ],
+  "8701": [
+    {
+      "span": "Cologne",
+      "type": "ORG"
+    }
+  ],
+  "8905": [
+    {
+      "span": "Catholic Information office",
+      "type": "ORG"
+    },
+    {
+      "span": "Nairobi",
+      "type": "LOC"
+    },
+    {
+      "span": "Australian Sisters Moira Lynch",
+      "type": "PER"
+    },
+    {
+      "span": "Mary Batchelor",
+      "type": "PER"
+    },
+    {
+      "span": "American Father Michael Barton",
+      "type": "PER"
+    },
+    {
+      "span": "Sudanese Father Raphael Riel",
+      "type": "PER"
+    },
+    {
+      "span": "SPLA",
+      "type": "ORG"
+    },
+    {
+      "span": "south Sudan",
+      "type": "LOC"
+    }
+  ],
+  "9343": [
+    {
+      "span": "Philadelphia",
+      "type": "LOC"
+    }
+  ],
+  "9380": [
+    {
+      "span": "Paralympics",
+      "type": "MISC"
+    },
+    {
+      "span": "France-Juppe",
+      "type": "LOC"
+    }
+  ],
+  "9410": [
+    {
+      "span": "Tuesday",
+      "type": "MISC"
+    },
+    {
+      "span": "Sri Lankan",
+      "type": "LOC"
+    }
+  ],
+  "9730": [
+    {
+      "span": "Elect Res",
+      "type": "ORG"
+    }
+  ],
+  "10059": [
+    {
+      "span": "Gianluca Corini",
+      "type": "PER"
+    },
+    {
+      "span": "Italy",
+      "type": "LOC"
+    },
+    {
+      "span": "Aki",
+      "type": "ORG"
+    }
+  ],
+  "10127": [
+    {
+      "span": "Italy",
+      "type": "LOC"
+    },
+    {
+      "span": "Silvio Martinelli",
+      "type": "PER"
+    },
+    {
+      "span": "Marco Villa",
+      "type": "PER"
+    }
+  ],
+  "10312": [
+    {
+      "span": "Kong",
+      "type": "LOC"
+    },
+    {
+      "span": "Open",
+      "type": "MISC"
+    },
+    {
+      "span": "Wednesday",
+      "type": "MISC"
+    }
+  ],
+  "10548": [
+    {
+      "span": "Barcelona",
+      "type": "ORG"
+    },
+    {
+      "span": "Hristo Stoichkov",
+      "type": "PER"
+    },
+    {
+      "span": "Sergi Barjuan",
+      "type": "PER"
+    },
+    {
+      "span": "Bulgarian",
+      "type": "MISC"
+    }
+  ],
+  "10635": [
+    {
+      "span": "Soccer - leading French League Scorers",
+      "type": "MISC"
+    }
+  ],
+  "11042": [
+    {
+      "span": "Sydney Newsroom",
+      "type": "ORG"
+    }
+  ],
+  "11227": [
+    {
+      "span": "organisers",
+      "type": "ORG"
+    },
+    {
+      "span": "a young translator",
+      "type": "PER"
+    }
+  ],
+  "11269": [
+    {
+      "span": "Costa Rica",
+      "type": "LOC"
+    },
+    {
+      "span": "Dutch",
+      "type": "MISC"
+    },
+    {
+      "span": "Nicaraguans",
+      "type": "MISC"
+    }
+  ],
+  "11504": [
+    {
+      "span": "draft",
+      "type": "MISC"
+    }
+  ],
+  "11801": [
+    {
+      "span": "The Names",
+      "type": "ORG"
+    },
+    {
+      "span": "1100 GMT Wednesday",
+      "type": "MISC"
+    },
+    {
+      "span": "Lloyd 's",
+      "type": "ORG"
+    },
+    {
+      "span": "David Rowland",
+      "type": "PER"
+    }
+  ],
+  "12274": [
+    {
+      "span": "45.455",
+      "type": "MISC"
+    }
+  ],
+  "12394": [
+    {
+      "span": "Christie",
+      "type": "PER"
+    },
+    {
+      "span": "Berlin",
+      "type": "LOC"
+    },
+    {
+      "span": "Rudi Thiel",
+      "type": "PER"
+    },
+    {
+      "span": "Jesse Owens",
+      "type": "PER"
+    },
+    {
+      "span": "Berlin Olympics",
+      "type": "MISC"
+    }
+  ],
+  "12546": [
+    {
+      "span": "Central division",
+      "type": "MISC"
+    }
+  ],
+  "12667": [
+    {
+      "span": "Fortuna Sittard",
+      "type": "ORG"
+    }
+  ],
+  "12688": [
+    {
+      "span": "Americans Harrison Dillard",
+      "type": "PER"
+    },
+    {
+      "span": "Lindy Remigino",
+      "type": "PER"
+    },
+    {
+      "span": "Jim Hines",
+      "type": "PER"
+    },
+    {
+      "span": "Trinidad",
+      "type": "LOC"
+    },
+    {
+      "span": "Hasely Crawford",
+      "type": "PER"
+    },
+    {
+      "span": "Britain",
+      "type": "LOC"
+    },
+    {
+      "span": "Allan Wells",
+      "type": "PER"
+    }
+  ],
+  "13291": [
+    {
+      "span": "Randall",
+      "type": "PER"
+    }
+  ],
+  "873": [
+    {
+      "span": "He",
+      "type": "PER"
+    },
+    {
+      "span": "2.99",
+      "type": "MISC"
+    }
+  ],
+  "1034": [
+    {
+      "span": "RICHMOND",
+      "type": "LOC"
+    },
+    {
+      "span": ", Va .",
+      "type": "LOC"
+    }
+  ],
+  "1229": [
+    {
+      "span": "T-bill",
+      "type": "MISC"
+    }
+  ],
+  "1383": [
+    {
+      "span": "Turkish",
+      "type": "MISC"
+    }
+  ],
+  "1617": [
+    {
+      "span": "Rangarajan",
+      "type": "PER"
+    }
+  ],
+  "1705": [
+    {
+      "span": "Wellington",
+      "type": "LOC"
+    }
+  ],
+  "1912": [
+    {
+      "span": "English County championship",
+      "type": "MISC"
+    }
+  ],
+  "2134": [
+    {
+      "span": "Baseball",
+      "type": "MISC"
+    }
+  ],
+  "2792": [
+    {
+      "span": "mutual recognition",
+      "type": "MISC"
+    },
+    {
+      "span": "internationally recognised",
+      "type": "MISC"
+    },
+    {
+      "span": "diplomatic relations",
+      "type": "MISC"
+    }
+  ],
+  "2964": [
+    {
+      "span": "Goldman Sachs & Co Wertpapier GmbH",
+      "type": "ORG"
+    },
+    {
+      "span": "Continental AG",
+      "type": "ORG"
+    },
+    {
+      "span": "Goldman Sachs & Co",
+      "type": "ORG"
+    }
+  ],
+  "3156": [
+    {
+      "span": "PTT",
+      "type": "ORG"
+    }
+  ],
+  "3220": [
+    {
+      "span": "Telstra",
+      "type": "ORG"
+    },
+    {
+      "span": "Greens",
+      "type": "ORG"
+    },
+    {
+      "span": "Australian Democrats",
+      "type": "ORG"
+    },
+    {
+      "span": "Labor Party",
+      "type": "ORG"
+    }
+  ],
+  "3487": [
+    {
+      "span": "+1 Ernie Els ( South Africa )",
+      "type": "PER"
+    },
+    {
+      "span": "South Africa",
+      "type": "LOC"
+    }
+  ],
+  "3770": [
+    {
+      "span": "OFK Kikinda",
+      "type": "ORG"
+    },
+    {
+      "span": "Radnicki ( N )",
+      "type": "ORG"
+    }
+  ],
+  "3933": [
+    {
+      "span": "Soccer",
+      "type": "ORG"
+    },
+    {
+      "span": "French League",
+      "type": "MISC"
+    }
+  ],
+  "4051": [
+    {
+      "span": "1860 Munich",
+      "type": "ORG"
+    },
+    {
+      "span": "Schwabl",
+      "type": "PER"
+    },
+    {
+      "span": "Borussia Dortmund",
+      "type": "ORG"
+    },
+    {
+      "span": "Zorc",
+      "type": "PER"
+    }
+  ],
+  "4161": [
+    {
+      "span": "Canadian",
+      "type": "LOC"
+    }
+  ],
+  "4178": [
+    {
+      "span": "Nigeria",
+      "type": "LOC"
+    },
+    {
+      "span": "Ubimini",
+      "type": "LOC"
+    },
+    {
+      "span": "News Agency of Nigeria",
+      "type": "ORG"
+    }
+  ],
+  "4189": [
+    {
+      "span": "Malawi",
+      "type": "LOC"
+    }
+  ],
+  "4483": [
+    {
+      "span": "Mickelson",
+      "type": "PER"
+    }
+  ],
+  "4696": [
+    {
+      "span": "Marcel Malone",
+      "type": "PER"
+    },
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    }
+  ],
+  "4846": [
+    {
+      "span": "Kocinski",
+      "type": "PER"
+    }
+  ],
+  "5037": [
+    {
+      "span": "Pakistan",
+      "type": "LOC"
+    }
+  ],
+  "5605": [
+    {
+      "span": "Swiss",
+      "type": "LOC"
+    }
+  ],
+  "6108": [
+    {
+      "span": "O'Neal",
+      "type": "PER"
+    }
+  ],
+  "6836": [
+    {
+      "span": "Sao Paulo",
+      "type": "LOC"
+    }
+  ],
+  "6998": [
+    {
+      "span": "Stich",
+      "type": "PER"
+    },
+    {
+      "span": "Spain",
+      "type": "LOC"
+    },
+    {
+      "span": "Felix Mantilla",
+      "type": "PER"
+    },
+    {
+      "span": "Open",
+      "type": "MISC"
+    }
+  ],
+  "7161": [
+    {
+      "span": "Blind",
+      "type": "PER"
+    },
+    {
+      "span": "Netherlands",
+      "type": "LOC"
+    },
+    {
+      "span": "Netherlands",
+      "type": "LOC"
+    },
+    {
+      "span": "Ajax Amsterdam",
+      "type": "ORG"
+    }
+  ],
+  "7368": [
+    {
+      "span": "Valkov",
+      "type": "PER"
+    },
+    {
+      "span": "Balkan Airlines",
+      "type": "ORG"
+    },
+    {
+      "span": "Bulgarian Black Sea resorts",
+      "type": "LOC"
+    }
+  ],
+  "7586": [
+    {
+      "span": "Russian",
+      "type": "MISC"
+    }
+  ],
+  "8113": [
+    {
+      "span": "police",
+      "type": "MISC"
+    }
+  ],
+  "8170": [
+    {
+      "span": "Wessels",
+      "type": "PER"
+    }
+  ],
+  "8762": [
+    {
+      "span": "He",
+      "type": "PER"
+    }
+  ],
+  "8815": [
+    {
+      "span": "Prague Stock Exchange",
+      "type": "ORG"
+    },
+    {
+      "span": "Prague",
+      "type": "LOC"
+    }
+  ],
+  "9201": [
+    {
+      "span": "Leon Barkho",
+      "type": "PER"
+    }
+  ],
+  "9354": [
+    {
+      "span": "Robert W. Baird",
+      "type": "PER"
+    }
+  ],
+  "9661": [
+    {
+      "span": "Dominion Bond Rating Service",
+      "type": "ORG"
+    },
+    {
+      "span": "Power Corp of Canada",
+      "type": "ORG"
+    },
+    {
+      "span": "A",
+      "type": "MISC"
+    },
+    {
+      "span": "Pfd-2",
+      "type": "MISC"
+    }
+  ],
+  "9792": [
+    {
+      "span": "Shane Drew",
+      "type": "PER"
+    }
+  ],
+  "10042": [
+    {
+      "span": "Johan Capiot",
+      "type": "PER"
+    },
+    {
+      "span": "Belgium",
+      "type": "LOC"
+    },
+    {
+      "span": "Collstrop",
+      "type": "ORG"
+    }
+  ],
+  "11547": [
+    {
+      "span": "Swiss",
+      "type": "MISC"
+    },
+    {
+      "span": "Switzerland",
+      "type": "LOC"
+    }
+  ],
+  "11748": [
+    {
+      "span": "St Ansgar Community School District",
+      "type": "ORG"
+    },
+    {
+      "span": "Iowa",
+      "type": "LOC"
+    }
+  ],
+  "11983": [
+    {
+      "span": "China",
+      "type": "LOC"
+    },
+    {
+      "span": "Xingfu",
+      "type": "MISC"
+    }
+  ],
+  "12367": [
+    {
+      "span": "MANCHESTER",
+      "type": "LOC"
+    },
+    {
+      "span": "England",
+      "type": "LOC"
+    }
+  ],
+  "12457": [
+    {
+      "span": "Samsung",
+      "type": "ORG"
+    }
+  ],
+  "12627": [
+    {
+      "span": "Barcelona",
+      "type": "LOC"
+    }
+  ],
+  "12932": [
+    {
+      "span": "CHILPANCINGO , Mexico",
+      "type": "LOC"
+    }
+  ],
+  "13146": [
+    {
+      "span": "surgeon",
+      "type": "PER"
+    }
+  ],
+  "13333": [
+    {
+      "span": "Pro forma net income",
+      "type": "MISC"
+    }
+  ],
+  "13779": [
+    {
+      "span": "Tokyo",
+      "type": "LOC"
+    }
+  ],
+  "13915": [
+    {
+      "span": "Rubin",
+      "type": "PER"
+    },
+    {
+      "span": "Wall Street",
+      "type": "LOC"
+    }
+  ],
+  "168": [
+    {
+      "span": "Dubai",
+      "type": "LOC"
+    }
+  ],
+  "171": [
+    {
+      "span": "Afghanistan",
+      "type": "LOC"
+    },
+    {
+      "span": "embassy",
+      "type": "ORG"
+    }
+  ],
+  "283": [
+    {
+      "span": "Oslo",
+      "type": "LOC"
+    }
+  ],
+  "463": [
+    {
+      "span": "Everton",
+      "type": "ORG"
+    },
+    {
+      "span": "Duncan Ferguson",
+      "type": "PER"
+    },
+    {
+      "span": "Manchester United",
+      "type": "ORG"
+    },
+    {
+      "span": "Scottish",
+      "type": "MISC"
+    }
+  ],
+  "617": [
+    {
+      "span": "Brazilian",
+      "type": "MISC"
+    }
+  ],
+  "1100": [
+    {
+      "span": "Britain",
+      "type": "LOC"
+    },
+    {
+      "span": "25 million pounds",
+      "type": "MISC"
+    },
+    {
+      "span": "39 million",
+      "type": "MISC"
+    },
+    {
+      "span": "Caribbean",
+      "type": "LOC"
+    },
+    {
+      "span": "Montserrat",
+      "type": "LOC"
+    }
+  ],
+  "1630": [
+    {
+      "span": "Bharat Ratna",
+      "type": "MISC"
+    },
+    {
+      "span": "Jewel of India",
+      "type": "MISC"
+    }
+  ],
+  "1836": [
+    {
+      "span": "Moscow",
+      "type": "LOC"
+    }
+  ],
+  "1873": [
+    {
+      "span": "Belgian",
+      "type": "MISC"
+    }
+  ],
+  "2085": [
+    {
+      "span": "Central division",
+      "type": "MISC"
+    }
+  ],
+  "2411": [
+    {
+      "span": "Men",
+      "type": "MISC"
+    }
+  ],
+  "2448": [
+    {
+      "span": "Ann Mercken",
+      "type": "PER"
+    },
+    {
+      "span": "Belgium",
+      "type": "LOC"
+    }
+  ],
+  "2510": [
+    {
+      "span": "Lisbon",
+      "type": "LOC"
+    }
+  ],
+  "3364": [
+    {
+      "span": "Jiangxi",
+      "type": "LOC"
+    },
+    {
+      "span": "China",
+      "type": "LOC"
+    }
+  ],
+  "3456": [
+    {
+      "span": "Karol Kucera",
+      "type": "PER"
+    },
+    {
+      "span": "Slovakia",
+      "type": "LOC"
+    },
+    {
+      "span": "Michael Chang",
+      "type": "PER"
+    },
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    }
+  ],
+  "3516": [
+    {
+      "span": "Saturday",
+      "type": "MISC"
+    }
+  ],
+  "3911": [
+    {
+      "span": "Heerenveen",
+      "type": "ORG"
+    },
+    {
+      "span": "Romeo Wouden",
+      "type": "PER"
+    },
+    {
+      "span": "Amsterdam",
+      "type": "LOC"
+    },
+    {
+      "span": "John Veldman",
+      "type": "PER"
+    },
+    {
+      "span": "Edwin van der Sar",
+      "type": "PER"
+    },
+    {
+      "span": "Ajax",
+      "type": "ORG"
+    }
+  ],
+  "4165": [
+    {
+      "span": "race",
+      "type": "MISC"
+    }
+  ],
+  "4237": [
+    {
+      "span": "National Democratic Alliance",
+      "type": "ORG"
+    },
+    {
+      "span": "Sudanese",
+      "type": "MISC"
+    },
+    {
+      "span": "Eritrean",
+      "type": "MISC"
+    },
+    {
+      "span": "Asmara",
+      "type": "LOC"
+    }
+  ],
+  "4529": [
+    {
+      "span": "Hamlet",
+      "type": "LOC"
+    }
+  ],
+  "4578": [
+    {
+      "span": "Martens",
+      "type": "PER"
+    }
+  ],
+  "5119": [
+    {
+      "span": "F.C. Petrolul Ploiesti",
+      "type": "ORG"
+    },
+    {
+      "span": "Politehnica Timisoara",
+      "type": "ORG"
+    }
+  ],
+  "5285": [
+    {
+      "span": "North Queensland",
+      "type": "LOC"
+    }
+  ],
+  "5352": [
+    {
+      "span": "Cleveland",
+      "type": "ORG"
+    }
+  ],
+  "5464": [
+    {
+      "span": "Benfica",
+      "type": "ORG"
+    },
+    {
+      "span": "Brazilian",
+      "type": "MISC"
+    },
+    {
+      "span": "Valdo",
+      "type": "PER"
+    }
+  ],
+  "6182": [
+    {
+      "span": "Pakistan",
+      "type": "LOC"
+    },
+    {
+      "span": "Azad",
+      "type": "LOC"
+    },
+    {
+      "span": "Kashmir",
+      "type": "LOC"
+    }
+  ],
+  "6311": [
+    {
+      "span": "Finland",
+      "type": "LOC"
+    },
+    {
+      "span": "Sebastian Lindholm",
+      "type": "PER"
+    }
+  ],
+  "6649": [
+    {
+      "span": "Smirnov",
+      "type": "PER"
+    }
+  ],
+  "6727": [
+    {
+      "span": "Standings",
+      "type": "MISC"
+    }
+  ],
+  "6920": [
+    {
+      "span": "National Tennis Centre",
+      "type": "LOC"
+    }
+  ],
+  "7324": [
+    {
+      "span": "Lebed",
+      "type": "PER"
+    }
+  ],
+  "7410": [
+    {
+      "span": "Interacciones",
+      "type": "ORG"
+    },
+    {
+      "span": "Mexico",
+      "type": "LOC"
+    },
+    {
+      "span": "GDP",
+      "type": "MISC"
+    },
+    {
+      "span": "peso",
+      "type": "MISC"
+    }
+  ],
+  "7444": [
+    {
+      "span": "Johns Hopkins Hospital",
+      "type": "ORG"
+    },
+    {
+      "span": "Baltimore",
+      "type": "LOC"
+    }
+  ],
+  "7461": [
+    {
+      "span": "bln",
+      "type": "MISC"
+    }
+  ],
+  "7865": [
+    {
+      "span": "AEX",
+      "type": "ORG"
+    }
+  ],
+  "8384": [
+    {
+      "span": "Jansher Khan",
+      "type": "PER"
+    },
+    {
+      "span": "Pakistnn",
+      "type": "LOC"
+    },
+    {
+      "span": "Jackie Lee",
+      "type": "PER"
+    },
+    {
+      "span": "Hong Kong",
+      "type": "LOC"
+    }
+  ],
+  "8409": [
+    {
+      "span": "Richard",
+      "type": "PER"
+    },
+    {
+      "span": "Edberg",
+      "type": "PER"
+    }
+  ],
+  "8499": [
+    {
+      "span": "Sandra Dopfer",
+      "type": "PER"
+    },
+    {
+      "span": "Austria",
+      "type": "LOC"
+    },
+    {
+      "span": "Zina Garrison Jackson",
+      "type": "PER"
+    },
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    }
+  ],
+  "9038": [
+    {
+      "span": "Enn Markvart",
+      "type": "PER"
+    },
+    {
+      "span": "National Election Commission",
+      "type": "ORG"
+    }
+  ],
+  "10572": [
+    {
+      "span": "Carlo Ancelotti",
+      "type": "PER"
+    },
+    {
+      "span": "Wealthy Parma",
+      "type": "ORG"
+    },
+    {
+      "span": "Enrico Chiesa",
+      "type": "PER"
+    },
+    {
+      "span": "Pescara",
+      "type": "LOC"
+    },
+    {
+      "span": "serie B",
+      "type": "MISC"
+    }
+  ],
+  "10987": [
+    {
+      "span": "Jacqueline Wong",
+      "type": "PER"
+    },
+    {
+      "span": "New York Energy Desk",
+      "type": "ORG"
+    }
+  ],
+  "11055": [
+    {
+      "span": "New Zealand Cricket",
+      "type": "ORG"
+    },
+    {
+      "span": "Sri Lankans",
+      "type": "MISC"
+    },
+    {
+      "span": "Hamilton",
+      "type": "LOC"
+    },
+    {
+      "span": "Wellington",
+      "type": "LOC"
+    },
+    {
+      "span": "Auckland",
+      "type": "LOC"
+    },
+    {
+      "span": "Christchurch",
+      "type": "LOC"
+    },
+    {
+      "span": "Dunedin",
+      "type": "LOC"
+    },
+    {
+      "span": "England",
+      "type": "LOC"
+    }
+  ],
+  "11299": [
+    {
+      "span": "Brazilian",
+      "type": "MISC"
+    },
+    {
+      "span": "Senate",
+      "type": "ORG"
+    },
+    {
+      "span": "Vale do Rio Doce",
+      "type": "ORG"
+    }
+  ],
+  "11600": [
+    {
+      "span": "Indian",
+      "type": "MISC"
+    },
+    {
+      "span": "Sri Lanka",
+      "type": "LOC"
+    },
+    {
+      "span": "India",
+      "type": "LOC"
+    }
+  ],
+  "11769": [
+    {
+      "span": "Lamm",
+      "type": "PER"
+    },
+    {
+      "span": "Perot",
+      "type": "PER"
+    },
+    {
+      "span": "CNN",
+      "type": "ORG"
+    }
+  ],
+  "12491": [
+    {
+      "span": "Arnaud Boetsch",
+      "type": "PER"
+    },
+    {
+      "span": "France",
+      "type": "LOC"
+    },
+    {
+      "span": "Magnus Gustafsson",
+      "type": "PER"
+    },
+    {
+      "span": "Sweden",
+      "type": "LOC"
+    }
+  ],
+  "12709": [
+    {
+      "span": "Britain",
+      "type": "LOC"
+    },
+    {
+      "span": "ROMANIA",
+      "type": "LOC"
+    },
+    {
+      "span": "HUNGARY",
+      "type": "LOC"
+    }
+  ],
+  "12840": [
+    {
+      "span": "RAO Gazprom",
+      "type": "ORG"
+    },
+    {
+      "span": "Thursday",
+      "type": "MISC"
+    },
+    {
+      "span": "Federal Securities Corporation ( FFK )",
+      "type": "ORG"
+    }
+  ],
+  "13853": [
+    {
+      "span": "INDICATORS",
+      "type": "MISC"
+    },
+    {
+      "span": "quarterly QUARTER PVS QTR YR-AGO",
+      "type": "MISC"
+    }
+  ],
+  "13914": [
+    {
+      "span": "Rubin",
+      "type": "PER"
+    },
+    {
+      "span": "Chicago",
+      "type": "LOC"
+    }
+  ],
+  "3137": [
+    {
+      "span": "Royal Oak",
+      "type": "ORG"
+    }
+  ],
+  "3756": [
+    {
+      "span": "Partizan",
+      "type": "ORG"
+    }
+  ],
+  "6197": [
+    {
+      "span": "62 decrees Celsius",
+      "type": "MISC"
+    },
+    {
+      "span": "143.60 Fahrenheit",
+      "type": "MISC"
+    }
+  ],
+  "6071": [
+    {
+      "span": "TRIPOLI",
+      "type": "LOC"
+    },
+    {
+      "span": "Lebanon",
+      "type": "LOC"
+    }
+  ],
+  "5179": [
+    {
+      "span": "Russian",
+      "type": "LOC"
+    }
+  ],
+  "7908": [
+    {
+      "span": "1996",
+      "type": "MISC"
+    },
+    {
+      "span": "702",
+      "type": "MISC"
+    },
+    {
+      "span": "1995",
+      "type": "MISC"
+    }
+  ],
+  "8181": [
+    {
+      "span": "English League Standings",
+      "type": "MISC"
+    }
+  ],
+  "1590": [
+    {
+      "span": "India",
+      "type": "LOC"
+    },
+    {
+      "span": "Pakistan",
+      "type": "LOC"
+    },
+    {
+      "span": "Islamabad",
+      "type": "LOC"
+    }
+  ],
+  "11682": [
+    {
+      "span": "London",
+      "type": "LOC"
+    }
+  ],
+  "10037": [
+    {
+      "span": "Leading",
+      "type": "MISC"
+    },
+    {
+      "span": "placings",
+      "type": "MISC"
+    },
+    {
+      "span": "in",
+      "type": "MISC"
+    }
+  ],
+  "10358": [
+    {
+      "span": "Medvedev",
+      "type": "PER"
+    }
+  ],
+  "8481": [
+    {
+      "span": "6-1",
+      "type": "MISC"
+    },
+    {
+      "span": "7-5",
+      "type": "MISC"
+    }
+  ],
+  "7266": [
+    {
+      "span": "Management",
+      "type": "ORG"
+    }
+  ],
+  "8512": [
+    {
+      "span": "lost",
+      "type": "MISC"
+    },
+    {
+      "span": "winning percentage",
+      "type": "MISC"
+    },
+    {
+      "span": "games behind",
+      "type": "MISC"
+    }
+  ],
+  "8142": [
+    {
+      "span": "Poland",
+      "type": "LOC"
+    },
+    {
+      "span": "Cyprus",
+      "type": "LOC"
+    }
+  ],
+  "10602": [
+    {
+      "span": "Lucchese",
+      "type": "ORG"
+    },
+    {
+      "span": "Vicenza",
+      "type": "ORG"
+    }
+  ],
+  "5240": [
+    {
+      "span": "North Melbourne",
+      "type": "ORG"
+    }
+  ],
+  "5089": [
+    {
+      "span": "Belgrade",
+      "type": "LOC"
+    }
+  ],
+  "13098": [
+    {
+      "span": "New York",
+      "type": "ORG"
+    },
+    {
+      "span": "Jerry Schein",
+      "type": "PER"
+    },
+    {
+      "span": "Somerset Jewellers",
+      "type": "ORG"
+    }
+  ],
+  "7712": [
+    {
+      "span": "Democratic National Convention",
+      "type": "MISC"
+    }
+  ],
+  "6398": [
+    {
+      "span": "Surrey",
+      "type": "ORG"
+    }
+  ],
+  "5701": [
+    {
+      "span": "Lommel",
+      "type": "ORG"
+    }
+  ],
+  "4100": [
+    {
+      "span": "GAK",
+      "type": "ORG"
+    },
+    {
+      "span": "Austria Vienna",
+      "type": "ORG"
+    }
+  ],
+  "9830": [
+    {
+      "span": "test ban treaty",
+      "type": "MISC"
+    },
+    {
+      "span": "nuclear disarmament",
+      "type": "MISC"
+    }
+  ],
+  "5480": [
+    {
+      "span": "Stefan Schwarz",
+      "type": "PER"
+    },
+    {
+      "span": "Sweden",
+      "type": "LOC"
+    },
+    {
+      "span": "Batistuta",
+      "type": "PER"
+    },
+    {
+      "span": "Franco Baresi",
+      "type": "PER"
+    }
+  ],
+  "148": [
+    {
+      "span": "riyal",
+      "type": "MISC"
+    }
+  ],
+  "1196": [
+    {
+      "span": "call",
+      "type": "MISC"
+    }
+  ],
+  "9275": [
+    {
+      "span": "Coolee City",
+      "type": "LOC"
+    },
+    {
+      "span": "WA",
+      "type": "LOC"
+    }
+  ],
+  "4694": [
+    {
+      "span": "Nick Nieland",
+      "type": "PER"
+    },
+    {
+      "span": "Britain",
+      "type": "LOC"
+    }
+  ],
+  "13607": [
+    {
+      "span": "Norwegian",
+      "type": "MISC"
+    },
+    {
+      "span": "NTB",
+      "type": "ORG"
+    }
+  ],
+  "4723": [
+    {
+      "span": "Motor racing - Belgian Grand Prix result",
+      "type": "MISC"
+    }
+  ],
+  "803": [
+    {
+      "span": "Western division",
+      "type": "MISC"
+    }
+  ],
+  "8274": [
+    {
+      "span": "Brentford",
+      "type": "ORG"
+    },
+    {
+      "span": "Gillingham",
+      "type": "ORG"
+    }
+  ],
+  "9087": [
+    {
+      "span": "Romina Nicaretta",
+      "type": "PER"
+    },
+    {
+      "span": "Sao Paulo",
+      "type": "LOC"
+    }
+  ],
+  "6756": [
+    {
+      "span": "UAG",
+      "type": "ORG"
+    },
+    {
+      "span": "Neza",
+      "type": "ORG"
+    }
+  ],
+  "6085": [
+    {
+      "span": "Anne Murray",
+      "type": "PER"
+    }
+  ],
+  "5440": [
+    {
+      "span": "National League",
+      "type": "MISC"
+    }
+  ],
+  "9706": [
+    {
+      "span": "San Diego",
+      "type": "LOC"
+    },
+    {
+      "span": "Republican",
+      "type": "ORG"
+    },
+    {
+      "span": "Mrs. Brady",
+      "type": "PER"
+    },
+    {
+      "span": "Reagan",
+      "type": "PER"
+    }
+  ],
+  "9498": [
+    {
+      "span": "Nepal",
+      "type": "LOC"
+    },
+    {
+      "span": "Maoist",
+      "type": "MISC"
+    },
+    {
+      "span": "Nepal",
+      "type": "LOC"
+    }
+  ],
+  "10343": [
+    {
+      "span": "Hapoel Beit She'an",
+      "type": "ORG"
+    },
+    {
+      "span": "Hapoel Beit She'an",
+      "type": "ORG"
+    }
+  ],
+  "2353": [
+    {
+      "span": "Pauline Konga",
+      "type": "PER"
+    },
+    {
+      "span": "Kenya",
+      "type": "LOC"
+    }
+  ],
+  "10310": [
+    {
+      "span": "Hong Kong",
+      "type": "LOC"
+    }
+  ],
+  "4453": [
+    {
+      "span": "Army",
+      "type": "ORG"
+    },
+    {
+      "span": "residents",
+      "type": "MISC"
+    }
+  ],
+  "3278": [
+    {
+      "span": "State Planning Commission",
+      "type": "ORG"
+    }
+  ],
+  "12851": [
+    {
+      "span": "Serbian",
+      "type": "MISC"
+    }
+  ],
+  "10867": [
+    {
+      "span": "Sanath Jayasuriya",
+      "type": "PER"
+    }
+  ],
+  "5686": [
+    {
+      "span": "Standings",
+      "type": "MISC"
+    }
+  ],
+  "12357": [
+    {
+      "span": "Armstrong",
+      "type": "PER"
+    }
+  ],
+  "11015": [
+    {
+      "span": "Albert Schweitzer",
+      "type": "PER"
+    },
+    {
+      "span": "Gabon",
+      "type": "LOC"
+    }
+  ],
+  "2717": [
+    {
+      "span": "Abdul Rahman",
+      "type": "PER"
+    }
+  ],
+  "12587": [
+    {
+      "span": "National League",
+      "type": "MISC"
+    }
+  ],
+  "10504": [
+    {
+      "span": "Bill Berkrot",
+      "type": "PER"
+    }
+  ],
+  "5364": [
+    {
+      "span": "Milwaukee",
+      "type": "ORG"
+    },
+    {
+      "span": "Cleveland",
+      "type": "LOC"
+    }
+  ],
+  "811": [
+    {
+      "span": "Pittsburgh",
+      "type": "ORG"
+    },
+    {
+      "span": "Houston",
+      "type": "LOC"
+    }
+  ],
+  "4319": [
+    {
+      "span": "Babel",
+      "type": "PER"
+    }
+  ],
+  "1635": [],
+  "8265": [
+    {
+      "span": "Division one",
+      "type": "MISC"
+    }
+  ],
+  "10015": [
+    {
+      "span": "( Sweden )",
+      "type": "LOC"
+    }
+  ],
+  "12582": [
+    {
+      "span": "Seattle",
+      "type": "LOC"
+    }
+  ],
+  "813": [
+    {
+      "span": "Montreal",
+      "type": "LOC"
+    },
+    {
+      "span": "San Francisco",
+      "type": "LOC"
+    }
+  ],
+  "2125": [
+    {
+      "span": "Chicago",
+      "type": "LOC"
+    },
+    {
+      "span": "Atlanta",
+      "type": "LOC"
+    }
+  ],
+  "4730": [
+    {
+      "span": "behind",
+      "type": "MISC"
+    }
+  ],
+  "7920": [
+    {
+      "span": "Front page",
+      "type": "MISC"
+    }
+  ],
+  "1715": [
+    {
+      "span": "Bangkok",
+      "type": "LOC"
+    }
+  ],
+  "11753": [
+    {
+      "span": "Colo .",
+      "type": "LOC"
+    }
+  ],
+  "13946": [
+    {
+      "span": "Martin Ayres",
+      "type": "PER"
+    }
+  ],
+  "5390": [
+    {
+      "span": "Chicago",
+      "type": "LOC"
+    },
+    {
+      "span": "Atlanta",
+      "type": "LOC"
+    }
+  ],
+  "7846": [
+    {
+      "span": "Seasongood & Mayer",
+      "type": "ORG"
+    }
+  ],
+  "10480": [
+    {
+      "span": "Chicago",
+      "type": "LOC"
+    },
+    {
+      "span": "Houston",
+      "type": "LOC"
+    }
+  ],
+  "14037": [
+    {
+      "span": "Division two",
+      "type": "MISC"
+    }
+  ],
+  "7095": [
+    {
+      "span": "American League",
+      "type": "MISC"
+    }
+  ],
+  "6458": [
+    {
+      "span": "7.",
+      "type": "MISC"
+    }
+  ],
+  "8989": [
+    {
+      "span": "Belinda Goldsmith",
+      "type": "PER"
+    }
+  ],
+  "481": [
+    {
+      "span": "Second round",
+      "type": "MISC"
+    }
+  ],
+  "7142": [
+    {
+      "span": "St Louis",
+      "type": "LOC"
+    },
+    {
+      "span": "Houston",
+      "type": "LOC"
+    }
+  ],
+  "11760": [
+    {
+      "span": "National",
+      "type": "ORG"
+    }
+  ],
+  "8562": [
+    {
+      "span": "Atlanta",
+      "type": "LOC"
+    },
+    {
+      "span": "Pittsburgh",
+      "type": "LOC"
+    }
+  ],
+  "7116": [
+    {
+      "span": "Oakland",
+      "type": "ORG"
+    },
+    {
+      "span": "Baltimore",
+      "type": "LOC"
+    }
+  ],
+  "10878": [
+    {
+      "span": "Jornal de Angola",
+      "type": "ORG"
+    }
+  ],
+  "939": [
+    {
+      "span": "Mark Mouland",
+      "type": "PER"
+    }
+  ],
+  "2097": [
+    {
+      "span": "Seattle",
+      "type": "LOC"
+    },
+    {
+      "span": "Boston",
+      "type": "LOC"
+    }
+  ],
+  "810": [
+    {
+      "span": "Cincinnati",
+      "type": "LOC"
+    },
+    {
+      "span": "Atlanta",
+      "type": "LOC"
+    }
+  ],
+  "6759": [
+    {
+      "span": "Group 1",
+      "type": "ORG"
+    }
+  ],
+  "9291": [
+    {
+      "span": "96",
+      "type": "MISC"
+    }
+  ],
+  "3885": [
+    {
+      "span": "American League",
+      "type": "MISC"
+    }
+  ],
+  "5067": [
+    {
+      "span": "Semifinals",
+      "type": "MISC"
+    }
+  ],
+  "4642": [],
+  "8932": [
+    {
+      "span": "Dmitry Kuznets",
+      "type": "PER"
+    }
+  ],
+  "2759": [
+    {
+      "span": "International reserves",
+      "type": "MISC"
+    }
+  ],
+  "3111": [],
+  "2128": [
+    {
+      "span": "New York",
+      "type": "ORG"
+    },
+    {
+      "span": "Los Angeles",
+      "type": "LOC"
+    }
+  ],
+  "12534": [
+    {
+      "span": "Kansas City",
+      "type": "ORG"
+    },
+    {
+      "span": "Detroit",
+      "type": "ORG"
+    }
+  ],
+  "8533": [
+    {
+      "span": "Cleveland",
+      "type": "ORG"
+    },
+    {
+      "span": "Detroit",
+      "type": "ORG"
+    }
+  ],
+  "9717": [
+    {
+      "span": "Brady",
+      "type": "PER"
+    }
+  ],
+  "13968": [
+    {
+      "span": "Final",
+      "type": "MISC"
+    }
+  ],
+  "3437": [
+    {
+      "span": "Quarterfinals",
+      "type": "MISC"
+    }
+  ],
+  "10837": [
+    {
+      "span": "Wednesday",
+      "type": "MISC"
+    }
+  ],
+  "5222": [
+    {
+      "span": "West Coast",
+      "type": "LOC"
+    }
+  ],
+  "4511": [
+    {
+      "span": "71 73",
+      "type": "MISC"
+    }
+  ],
+  "2287": [
+    {
+      "span": "66 69",
+      "type": "MISC"
+    }
+  ],
+  "12115": [
+    {
+      "span": "Expansion",
+      "type": "MISC"
+    }
+  ]
+}
