@@ -1,6 +1,5 @@
 import ujson as json
 import os
-from ujson import JSONDecodeError
 from func_timeout import func_set_timeout
 from openai import RateLimitError
 from langchain_core import prompts, output_parsers
@@ -36,15 +35,24 @@ class Annotator:
         self.output_parser = output_parsers.StrOutputParser()
         self.chain = self.prompt_template | self.llm | self.output_parser
 
-    def generate_prompt(self, sample, demo = None):
+    def _generate_prompt(self, sample, demo = None):
         to_annotate = self.input_format.format(sample['text'])
         if demo:
+            print("demo:", demo)
             demo_annotations = "\n".join(f"{self.input_format.format(d['text'])}\n{self.output_format.format(d['labels'])}" for d in demo)
             return f"here are some examples:\n{demo_annotations}\n \n Please now annotate the following input: \n {to_annotate}"
         else:
             return f"please annote the following input: \n{to_annotate}"
-        
 
+    def generate_prompt(self, sample, demo=None):
+        to_annotate = self.input_format.format(json.dumps(sample['text']))
+        if demo:
+            demo_annotations = "\n".join(
+                f"{self.input_format.format(json.dumps(d['text']))}\n{self.output_format.format(json.dumps(d['labels']))}" for d in demo
+            )
+            return f"Here are some examples:\n{demo_annotations}\n\nPlease now annotate the following input:\n{to_annotate}"
+        else:
+            return f"Please annotate the following input:\n{to_annotate}"
     
     @func_set_timeout(60)
     def online_annotate(self, sample, demo=None):

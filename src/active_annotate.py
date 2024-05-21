@@ -102,7 +102,7 @@ def active_learning_loop(args):
     config.model_name_or_path = args.model_name_or_path
     # get data
     pool_features = data_processor.get_features(split='train')
-    pool_features = pool_features.shuffle(seed=42).select(range(int(0.1 * len(pool_features)))) #edit this out after testing
+    #pool_features = pool_features.shuffle(seed=42).select(range(int(0.1 * len(pool_features)))) #edit this out after testing
     dev_features = data_processor.get_features(split='demo')
     test_features = data_processor.get_features(split='test')
     assert args.strategy in ['random', 'entropy', 'confidence', 'kmeans', 'hybrid']
@@ -197,7 +197,7 @@ def active_learning_loop(args):
 
 
 if __name__ == '__main__':
-    warnings.filterwarnings("ignore", message="M-MISC seems not to NE-tag")
+    warnings.filterwarnings("ignore", message="seems not to NE-tag")
     env = Env()
     env.read_env(".env")
     OPENAI_API_KEY = env.str("OPENAI_API_KEY")

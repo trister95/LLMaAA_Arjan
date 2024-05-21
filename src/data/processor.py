@@ -90,5 +90,5 @@ if __name__ == '__main__':
         tag2id = json.load(file)['tag2id']
 
     # Now pass tag2id to the ner_reader
-    dataset = ner_reader(tokenizer, dataset_name,)
+    dataset = ner_reader(tokenizer, dataset_name)
     print(dataset['train'][0])
