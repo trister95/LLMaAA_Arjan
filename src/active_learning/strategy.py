@@ -5,7 +5,6 @@ from func_timeout.exceptions import FunctionTimedOut
 from openai import RateLimitError
 from abc import ABC, abstractmethod
 import numpy as np
-from torch import nn
 from ..llm_annotator import Annotator
 
 RETRY = 3
