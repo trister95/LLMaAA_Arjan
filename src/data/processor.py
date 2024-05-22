@@ -55,7 +55,10 @@ class Processor:
     
     def reload(self):
         print('Reloading dataset...')
-        self.tokenized_datasets = ner_reader(self.tokenizer, self.dataset_name, self.cache_name, self.use_cache) #changed this from features to tokenized_datasets
+        data = ner_reader(self.tokenizer, self.dataset_name, self.cache_name, self.use_cache) #changed this from features to tokenized_datasets
+        self.tokenized_datasets = DatasetDict({
+          split: Dataset.from_dict(data[split])
+          for split in data})  
         print('Finish reloading dataset.')
 
     def get_id2tag(self):
