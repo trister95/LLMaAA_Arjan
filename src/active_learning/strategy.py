@@ -11,16 +11,6 @@ RETRY = 3
 
 class Strategy(ABC):
     def __init__(self, annotator_config_name, pool_size, setting: str='knn', engine: str='gpt-3.5'):
-        """
-        Base class for active learning strategy.
-        Functionality:
-            - Maintain the labeled & pool data set with mask.
-            - Query strategies are implemented in subclass, which return indices.
-            - Annotate all data in labeled set.
-        Notice:
-            - Reloading is implemented & handled by data.Processor.
-            - Load demo file and demo index w.r.t. train data.
-        """
         self.lab_data_mask = np.zeros(pool_size, dtype=bool)
         self.annotator = Annotator(engine, annotator_config_name)
         self.dataset = self.annotator.dataset
@@ -28,10 +18,9 @@ class Strategy(ABC):
             self.task_type = 'ner'
         elif self.dataset in ['en_semeval10', 'en_retacred']:
             self.task_type = 're'
-        else:  
+        else:
             raise ValueError('Unknown dataset.')
         self.setting = setting
-        # use knn demo
         dir_path = os.path.dirname(os.path.realpath(__file__))
         dir_path = os.path.dirname(os.path.dirname(dir_path))
         demo_file_path = os.path.join(dir_path, f'data/{self.dataset}/demo.jsonl')
@@ -64,8 +53,6 @@ class Strategy(ABC):
     
     @abstractmethod
     def query(self, args, k, model, features):
-        # return k indices
-        # assume k <= len(pool)
         return
     
     def init_labeled_data(self, n_sample: int=None):
@@ -81,7 +68,8 @@ class Strategy(ABC):
     
     def update(self, indices, features):
         self.lab_data_mask[indices] = True
-        return self.annotate(features)
+        records = self.annotate(features)
+        return records
     
     def annotate(self, features):
         results = {}
@@ -90,13 +78,9 @@ class Strategy(ABC):
             feature = features[int(i)]
             label_key = 'labels' if self.task_type == 'ner' else 'label_id'
 
-
-            if feature[label_key] is None:  # need to be annotated
-                # get demo if not `zero`
+            if feature[label_key] is None:
                 if self.setting == 'random' or self.setting == 'knn':
-                    # pointer: {'id': id, ('score': score)}
-                    demo = [self.demo_file[pointer['id']] 
-                        for pointer in reversed(self.demo_index[feature['id']])]
+                    demo = [self.demo_file[pointer['id']] for pointer in reversed(self.demo_index[feature['id']])]
                 else:
                     demo = None
 
@@ -111,7 +95,8 @@ class Strategy(ABC):
                         print('Rate limit. Sleep for 60 seconds...')
                         time.sleep(60)
 
-                results[feature['id']] = result
-    
-        print('Annotate {} new records.'.format(len(results)))
+                if result is None:
+                    print(f"Error: No annotation result for index {i} (feature id {feature['id']}).")
+                else:
+                    results[feature['id']] = result
         return results

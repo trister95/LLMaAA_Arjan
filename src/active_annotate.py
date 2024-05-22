@@ -103,7 +103,6 @@ def active_learning_loop(args):
     # get data
     pool_features = data_processor.get_features(split='train')
     #pool_features = pool_features.shuffle(seed=42).select(range(int(0.1 * len(pool_features)))) #edit this out after testing
-    print(len(pool_features),"=len(pool_features)")
     dev_features = data_processor.get_features(split='demo')
     test_features = data_processor.get_features(split='test')
     assert args.strategy in ['random', 'entropy', 'confidence', 'kmeans', 'hybrid']
@@ -132,12 +131,10 @@ def active_learning_loop(args):
     else:
         n_init_samples = args.init_samples
     indices = strategy.init_labeled_data(n_sample=n_init_samples)
-    print(indices, "<--indices")
     records = strategy.update(indices, pool_features)
-    print(records, "<--records")
+
 
     if len(records) > 0:
-        print("more than zero records")
         data_processor.update_cache(records)
         data_processor.reload()
         pool_features = data_processor.get_features(split='train')

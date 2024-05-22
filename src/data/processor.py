@@ -2,8 +2,9 @@ import os
 import json
 from transformers import AutoTokenizer
 from datasets import Dataset, DatasetDict
-
+import numpy as np
 from .ner_reader import ner_reader
+
 
 class Processor:
     def __init__(self, dataset: str, tokenizer: AutoTokenizer, cache_name: str = 'cache'):
@@ -35,11 +36,16 @@ class Processor:
         
         data = ner_reader(tokenizer, self.dataset_name, self.cache_name,
                           self.use_cache)
+        
+        print(type(data))
+        for e in data:
+            print(type(data[e]))
+              
 
         self.tokenized_datasets = DatasetDict({
             split: Dataset.from_dict(data[split])
             for split in data
-        })        
+            })  
         print('Finish loading dataset.')
 
     def update_cache(self, records: dict):
@@ -49,9 +55,8 @@ class Processor:
     
     def reload(self):
         print('Reloading dataset...')
-        self.features = ner_reader(self.tokenizer, self.dataset_name, self.cache_name, self.use_cache)
+        self.tokenized_datasets = ner_reader(self.tokenizer, self.dataset_name, self.cache_name, self.use_cache) #changed this from features to tokenized_datasets
         print('Finish reloading dataset.')
-
 
     def get_id2tag(self):
         return self.id2tag

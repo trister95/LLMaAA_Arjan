@@ -1,0 +1,418 @@
+{
+  "169": [
+    {
+      "span": "Russian",
+      "type": "MISC"
+    },
+    {
+      "span": "Afghanistan",
+      "type": "LOC"
+    },
+    {
+      "span": "United Arab Emirates",
+      "type": "LOC"
+    },
+    {
+      "span": "Taleban",
+      "type": "ORG"
+    },
+    {
+      "span": "Afghan",
+      "type": "MISC"
+    },
+    {
+      "span": "Abu Dhabi",
+      "type": "LOC"
+    }
+  ],
+  "218": [],
+  "286": [
+    {
+      "span": "Finland",
+      "type": "LOC"
+    },
+    {
+      "span": "National Customs Board",
+      "type": "ORG"
+    },
+    {
+      "span": "NCB",
+      "type": "ORG"
+    },
+    {
+      "span": "Thursday",
+      "type": "MISC"
+    }
+  ],
+  "468": [
+    {
+      "span": "Celtic",
+      "type": "ORG"
+    },
+    {
+      "span": "Jackie McNamara",
+      "type": "PER"
+    }
+  ],
+  "747": [
+    {
+      "span": "U.S.",
+      "type": "LOC"
+    },
+    {
+      "span": "Michael Chang",
+      "type": "PER"
+    }
+  ],
+  "794": [
+    {
+      "span": "New York",
+      "type": "ORG"
+    }
+  ],
+  "1697": [],
+  "2145": [
+    {
+      "span": "Pittsburgh",
+      "type": "ORG"
+    },
+    {
+      "span": "HOUSTON",
+      "type": "ORG"
+    }
+  ],
+  "2459": [
+    {
+      "span": "Germany",
+      "type": "LOC"
+    },
+    {
+      "span": "Lars Riedel",
+      "type": "PER"
+    }
+  ],
+  "2807": [
+    {
+      "span": "Amazon",
+      "type": "LOC"
+    }
+  ],
+  "3425": [
+    {
+      "span": "Belgian",
+      "type": "MISC"
+    }
+  ],
+  "3461": [],
+  "4743": [
+    {
+      "span": "Rubens Barrichello",
+      "type": "PER"
+    },
+    {
+      "span": "Brazil",
+      "type": "LOC"
+    },
+    {
+      "span": "Jordan",
+      "type": "ORG"
+    }
+  ],
+  "4816": [
+    {
+      "span": "Akira Ryo",
+      "type": "PER"
+    },
+    {
+      "span": "Japan",
+      "type": "LOC"
+    },
+    {
+      "span": "Kawasaki",
+      "type": "ORG"
+    }
+  ],
+  "5217": [],
+  "5312": [
+    {
+      "span": "OB",
+      "type": "ORG"
+    },
+    {
+      "span": "Lotte",
+      "type": "ORG"
+    }
+  ],
+  "5460": [
+    {
+      "span": "Domingos",
+      "type": "PER"
+    }
+  ],
+  "5711": [
+    {
+      "span": "Volendam",
+      "type": "LOC"
+    }
+  ],
+  "5723": [
+    {
+      "span": "PSV Eindhoven",
+      "type": "ORG"
+    },
+    {
+      "span": "Faber",
+      "type": "PER"
+    },
+    {
+      "span": "Nilis",
+      "type": "PER"
+    },
+    {
+      "span": "Petrovic",
+      "type": "PER"
+    }
+  ],
+  "5768": [
+    {
+      "span": "Roda JC Kerkrade",
+      "type": "ORG"
+    }
+  ],
+  "6561": [
+    {
+      "span": "LIBERIA",
+      "type": "LOC"
+    },
+    {
+      "span": "Costa Rica",
+      "type": "LOC"
+    }
+  ],
+  "6849": [
+    {
+      "span": "Botafogo",
+      "type": "ORG"
+    }
+  ],
+  "6922": [
+    {
+      "span": "U.S. Open",
+      "type": "MISC"
+    }
+  ],
+  "7328": [
+    {
+      "span": "Sergei Yastrzhembsky",
+      "type": "PER"
+    },
+    {
+      "span": "Kremlin",
+      "type": "LOC"
+    },
+    {
+      "span": "Moscow",
+      "type": "LOC"
+    }
+  ],
+  "7406": [
+    {
+      "span": "Wisinga",
+      "type": "PER"
+    },
+    {
+      "span": "Europe",
+      "type": "LOC"
+    }
+  ],
+  "7596": [],
+  "7613": [
+    {
+      "span": "P1020",
+      "type": "MISC"
+    }
+  ],
+  "8522": [
+    {
+      "span": "Cleveland",
+      "type": "ORG"
+    }
+  ],
+  "8699": [
+    {
+      "span": "VfB Stuttgart",
+      "type": "ORG"
+    }
+  ],
+  "8809": [
+    {
+      "span": "$ 21 million",
+      "type": "MISC"
+    }
+  ],
+  "9205": [
+    {
+      "span": "Iraq",
+      "type": "LOC"
+    },
+    {
+      "span": "U.N.",
+      "type": "ORG"
+    },
+    {
+      "span": "Baghdad",
+      "type": "LOC"
+    }
+  ],
+  "9412": [],
+  "9735": [
+    {
+      "span": "Forsa",
+      "type": "ORG"
+    }
+  ],
+  "9853": [
+    {
+      "span": "Japanese",
+      "type": "MISC"
+    },
+    {
+      "span": "July",
+      "type": "MISC"
+    },
+    {
+      "span": "224,609 tonnes",
+      "type": "MISC"
+    },
+    {
+      "span": "Japan Aluminium Federation",
+      "type": "ORG"
+    },
+    {
+      "span": "Tuesday",
+      "type": "MISC"
+    }
+  ],
+  "10191": [
+    {
+      "span": "West Bromwich",
+      "type": "ORG"
+    }
+  ],
+  "10378": [],
+  "10652": [
+    {
+      "span": "Pires",
+      "type": "PER"
+    },
+    {
+      "span": "French",
+      "type": "MISC"
+    },
+    {
+      "span": "Aime Jacquet",
+      "type": "PER"
+    },
+    {
+      "span": "Mexico",
+      "type": "LOC"
+    },
+    {
+      "span": "Parc des Princes",
+      "type": "LOC"
+    }
+  ],
+  "10667": [
+    {
+      "span": "Amsterdam",
+      "type": "LOC"
+    }
+  ],
+  "11239": [],
+  "11767": [],
+  "12246": [
+    {
+      "span": "Sorensen",
+      "type": "PER"
+    }
+  ],
+  "12304": [],
+  "12352": [
+    {
+      "span": "Germany",
+      "type": "LOC"
+    },
+    {
+      "span": "Olaf Ludwig",
+      "type": "PER"
+    },
+    {
+      "span": "Telekom",
+      "type": "ORG"
+    }
+  ],
+  "12467": [
+    {
+      "span": "Annabel Ellwood",
+      "type": "PER"
+    },
+    {
+      "span": "Australia",
+      "type": "LOC"
+    },
+    {
+      "span": "Belgium",
+      "type": "LOC"
+    },
+    {
+      "span": "Els Callens",
+      "type": "PER"
+    }
+  ],
+  "12689": [
+    {
+      "span": "Jesse Owens",
+      "type": "PER"
+    }
+  ],
+  "12974": [
+    {
+      "span": "Banharn",
+      "type": "PER"
+    },
+    {
+      "span": "General Chatichai Choonhavan",
+      "type": "PER"
+    }
+  ],
+  "13381": [
+    {
+      "span": "Turkey",
+      "type": "LOC"
+    },
+    {
+      "span": "Israel",
+      "type": "LOC"
+    },
+    {
+      "span": "Iranian",
+      "type": "MISC"
+    },
+    {
+      "span": "Necmettin Erbakan",
+      "type": "PER"
+    }
+  ],
+  "13722": [
+    {
+      "span": "Simex Nikkei futures",
+      "type": "ORG"
+    },
+    {
+      "span": "Thursday",
+      "type": "MISC"
+    }
+  ],
+  "13780": [],
+  "13944": []
+}

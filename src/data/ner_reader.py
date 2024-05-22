@@ -76,6 +76,7 @@ def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, cache_name: str='',
 
     if use_cache:
         cache_file = os.path.join(dir_path, f'{cache_name}.json')
+        print("cache_file", cache_file)
         cache = json.load(open(cache_file, 'r', encoding='utf-8'))
 
     meta_path = os.path.join(dir_path, 'meta.json')
@@ -93,6 +94,7 @@ def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, cache_name: str='',
                 'text': [],
                 'tokens':[]
             }
+
             for sample in tqdm(data, desc=f"Processing {split} data"):
                 tokens = sample['tokens']
                 tags = sample['tags']
@@ -109,10 +111,14 @@ def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, cache_name: str='',
                     else:
                         labels.append(-100)
                     previous_word_idx = word_idx
-                
-                if split == 'train' and use_cache and sample['id'] not in cache:
+                            
+                if split == 'train' and use_cache and sample['id'] not in cache: 
                     labels = None
+
+                if split == 'train' and use_cache and sample['id'] in cache: 
+                    print("nou maar dat is toevallig")
                 # Append each field separately to the correct list
+
                 processed_data[split]['input_ids'].append(tokenized_inputs['input_ids'])
                 processed_data[split]['attention_mask'].append(tokenized_inputs['attention_mask'])
                 processed_data[split]['labels'].append(labels)
