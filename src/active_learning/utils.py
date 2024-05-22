@@ -16,8 +16,8 @@ def collate_fn(batch):
 
 def ner_predict(args, model, dataset):
     model.eval()
-    dataset = dataset.remove_columns(["labels", "text", "tokens"])
-    data_loader = DataLoader(dataset, batch_size=12, shuffle=False, collate_fn=collate_fn)
+    #dataset = dataset.remove_columns(["labels", "text", "tokens"])
+    data_loader = DataLoader(dataset, batch_size=12, shuffle=False, collate_fn=ner_collate_fn) #or: collate
 
     pred_logits = []
     max_len = 0  # Initialize max_len

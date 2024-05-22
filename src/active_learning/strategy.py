@@ -10,7 +10,7 @@ from ..llm_annotator import Annotator
 RETRY = 3
 
 class Strategy(ABC):
-    def __init__(self, annotator_config_name, pool_size, setting: str='knn', engine: str='gpt-3.5-turbo-0125'):
+    def __init__(self, annotator_config_name, pool_size, setting: str='knn', engine: str='gpt-3.5'):
         """
         Base class for active learning strategy.
         Functionality:
@@ -28,7 +28,7 @@ class Strategy(ABC):
             self.task_type = 'ner'
         elif self.dataset in ['en_semeval10', 'en_retacred']:
             self.task_type = 're'
-        else:
+        else:  
             raise ValueError('Unknown dataset.')
         self.setting = setting
         # use knn demo

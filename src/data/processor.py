@@ -1,7 +1,7 @@
 import os
 import json
 from transformers import AutoTokenizer
-from datasets import Dataset, DatasetDict, concatenate_datasets
+from datasets import Dataset, DatasetDict
 
 from .ner_reader import ner_reader
 
@@ -64,14 +64,6 @@ class Processor:
             return self.tokenized_datasets[split]
         else:
             raise ValueError(f"Split '{split}' not found in dataset")
-    
-    def get_dataset_dict(self):
-        return self.tokenized_datasets
-
-    def add_annotations(self, new_annotations):
-        """Add new annotations to the training set."""
-        new_dataset = Dataset.from_dict(new_annotations)
-        self.tokenized_datasets['train'] = concatenate_datasets([self.tokenized_datasets['train'], new_dataset])
 
 if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained('bert-base-cased')

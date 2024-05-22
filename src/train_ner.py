@@ -123,10 +123,39 @@ def train_ner(args, train_dataset, dev_dataset, model, id2label, tokenizer):
     else:
         print("Labels are missing")  # Diagnose missing labels
 
-    try:
-        trainer.train()
-    except Exception as e:
-        print(f"An error occurred during training: {str(e)}")
+    def validate_dataset(dataset):
+        for entry in dataset:
+            # Check for None entries
+            if entry is None:
+                print("Found None entry in dataset")
+            # Check for missing fields
+            if 'input_ids' not in entry or 'attention_mask' not in entry or 'labels' not in entry:
+                print(f"Entry with id {entry.get('id', 'unknown')} is missing one or more required fields")
+            # Check for None fields
+            if entry['input_ids'] is None or entry['attention_mask'] is None or entry['labels'] is None:
+                print(entry)
+                print(f"Entry with id {entry.get('id', 'unknown')} has None in one or more required fields")
+            # Check for consistent lengths
+            try:
+                if len(entry['input_ids']) != len(entry['attention_mask']) or len(entry['input_ids']) != len(entry['labels']):
+                    print(f"Entry with id {entry['id']} has mismatched lengths for input_ids, attention_mask, and labels")
+            except:
+                print(f"problem with {entry['labels']}")
+            # Check for all padding
+            if all(label == -100 for label in entry['labels']):
+                print(f"Entry with id {entry['id']} has all labels as -100")
+            if all(id == 0 for id in entry['input_ids']):
+                print(f"Entry with id {entry['id']} has all input_ids as 0")
+
+    # Validate the train and eval datasets
+    validate_dataset(train_dataset)
+    validate_dataset(dev_dataset)
+
+
+    #try:
+    trainer.train()
+    #except Exception as e:
+    #    print(f"An error occurred during training: {str(e)}")
 
     return trainer.model
 

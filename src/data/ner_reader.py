@@ -56,70 +56,6 @@ def convert_span_labels_to_sequence_labels(tokens, span_label, language):
     assert len(labels) == len(tokens)
     return labels
 
-def _convert_span_labels_to_sequence_labels(tokens, span_label, language):
-    """
-    Covert span labels to sequence labels.
-    Language: en/zh
-    """
-    span_label = sorted(span_label, key=lambda x: len(x['span']), reverse=True)
-    span_to_type = {entity['span']: entity['type'] for entity in span_label}
-    # get words list
-    if language == 'zh':
-        text = ''.join(tokens)
-        for entity in span_label:
-            span = entity['span']
-            text = ('[sep]' + span + '[sep]').join(text.split(span))
-        words = text.split('[sep]')
-    else:
-        # build a tokenizer first
-        dictionary = dict()
-        for token in tokens:
-            if token not in dictionary:
-                dictionary[token] = f'[{len(dictionary)}]'
-        id_string = ' '.join([dictionary[token] for token in tokens])
-        for entity in span_label:
-            span_tokens = entity['span'].strip().split(' ')
-            # validate span token
-            valid_flag = True
-            for token in span_tokens:
-                if token not in dictionary:
-                    valid_flag = False
-                    break
-            if not valid_flag:
-                continue
-            # translate span token into ids
-            id_substring = ' '.join([dictionary[token] for token in span_tokens])
-            id_string = ('[sep]' + id_substring + '[sep]').join(id_string.split(id_substring))
-            # print(id_string)
-        # convert back to nl
-        sent = id_string
-        for token in dictionary:
-            sent = sent.replace(dictionary[token], token)
-        words = sent.split('[sep]')
-
-    labels = []
-    for word in words:
-        word = word.strip()
-        if len(word) == 0:
-            continue
-        entity_flag = (word in span_to_type)
-        if language == 'en':
-            word_length = len(word.split(' '))
-        else:
-            word_length = len(word)
-        if entity_flag:
-            if word_length == 1:
-                label = [f'S-{span_to_type[word]}']
-            else:
-                label = ([f'B-{span_to_type[word]}'] + [f'M-{span_to_type[word]}'] * (word_length - 2)
-                            + [f'E-{span_to_type[word]}'])
-        else:
-            label = ['O' for _ in range(word_length)]
-        labels.extend(label)
-
-    assert len(labels) == len(tokens)
-    return labels        
-
 def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, cache_name: str='', use_cache: bool=True):
     """
     Read the dataset, tokenize the data, and align the labels accordingly,
@@ -174,9 +110,8 @@ def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, cache_name: str='',
                         labels.append(-100)
                     previous_word_idx = word_idx
                 
-                
                 if split == 'train' and use_cache and sample['id'] not in cache:
-                    labels = None #?
+                    labels = None
                 # Append each field separately to the correct list
                 processed_data[split]['input_ids'].append(tokenized_inputs['input_ids'])
                 processed_data[split]['attention_mask'].append(tokenized_inputs['attention_mask'])
