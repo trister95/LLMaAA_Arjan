@@ -153,7 +153,7 @@ def active_learning_loop(args):
         print('========== begin active learning loop {} =========='.format(i))
         ugly_log(args.log_file, '========== begin active learning loop {} =========='.format(i))
         # get features
-        train_features = strategy.get_labeled_data(pool_features)
+        train_features = strategy.get_labeled_data(pool_features) #problem is here
         
         print(f'# of training data: {len(train_features)}')
         # debug
