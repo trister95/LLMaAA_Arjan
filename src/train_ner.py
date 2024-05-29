@@ -117,12 +117,6 @@ def train_ner(args, train_dataset, dev_dataset, model, id2label, tokenizer):
         compute_metrics=compute_metrics_with_id2label
     )
 
-    # Additional debug logs to confirm data integrity
-    if "labels" in train_dataset.column_names:
-        print("Labels are present")  # Confirming labels are there
-    else:
-        print("Labels are missing")  # Diagnose missing labels
-
     def validate_dataset(dataset):
         for entry in dataset:
             # Check for None entries
@@ -151,12 +145,7 @@ def train_ner(args, train_dataset, dev_dataset, model, id2label, tokenizer):
     validate_dataset(train_dataset)
     validate_dataset(dev_dataset)
 
-
-    #try:
     trainer.train()
-    #except Exception as e:
-    #    print(f"An error occurred during training: {str(e)}")
-
     return trainer.model
 
 

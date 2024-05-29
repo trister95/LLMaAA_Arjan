@@ -24,8 +24,7 @@ def get_opt():
     # file related
     base_dir = os.path.dirname(os.path.realpath(__file__))
     default_save_path = os.path.join(base_dir, '..', 'models')
-    print(default_save_path,"=default_save_path")
-    
+
     parser.add_argument('--save_path', default=default_save_path, type=str, help="Path to save the model.")
     parser.add_argument('--load_path', default='', type=str)    # haven't implemented yet!
     # model related
@@ -188,9 +187,7 @@ def active_learning_loop(args):
         else:
             k = args.acquisition_samples
         indices = strategy.query(args, k, pool_features, model)
-        print("indices acquired", indices)
         records = strategy.update(indices, pool_features)
-        print("records acquired", records)
         if len(records) > 0:
             data_processor.update_cache(records)
             data_processor.reload()

@@ -76,7 +76,6 @@ def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, cache_name: str='',
 
     if use_cache:
         cache_file = os.path.join(dir_path, f'{cache_name}.json')
-        print("cache_file", cache_file)
         cache = json.load(open(cache_file, 'r', encoding='utf-8'))
 
     meta_path = os.path.join(dir_path, 'meta.json')
