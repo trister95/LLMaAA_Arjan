@@ -12,7 +12,7 @@ class LeastConfidence(Strategy):
 
     def query(self, args, k, dataset, model):
         pool_indices = self._get_pool_indices() #changed this
-        pool_features = [dataset[i] for i in pool_indices] #changed this
+        pool_features = [dataset[int(i)] for i in pool_indices] #changed this
         pool_logits = ner_predict(args, model, pool_features)
         uncertainties = compute_uncertainty(pool_logits, reduction=self.reduction)
         topk_indices = torch.topk(uncertainties, k=k).indices
