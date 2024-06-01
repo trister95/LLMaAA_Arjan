@@ -12,6 +12,7 @@ RETRY = 3
 class Strategy(ABC):
     def __init__(self, annotator_config_name, pool_size, setting: str='knn', engine: str='gpt-3.5'):
         self.lab_data_mask = np.zeros(pool_size, dtype=bool)
+        print("pool_size",pool_size)
         self.annotator = Annotator(engine, annotator_config_name)
         self.dataset = self.annotator.dataset
         if self.dataset in ['en_conll03', 'planimals']:
@@ -56,6 +57,7 @@ class Strategy(ABC):
     def init_labeled_data(self, n_sample: int=None):
         if n_sample is None:
             raise ValueError('Please specify initial sample ratio/size.')
+        
         assert n_sample <= len(self)
 
         indices = np.arange(len(self))

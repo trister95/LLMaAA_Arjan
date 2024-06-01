@@ -115,6 +115,7 @@ def ner_reader(tokenizer: AutoTokenizer, dataset: str, cache_name: str='', use_c
                 processed_data[split]['id'].append(sample['id'])
                 processed_data[split]['text'].append(sample['text'])
                 processed_data[split]['tokens'].append(sample['tokens'])
+            print(processed_data[split])
     return processed_data
 
 

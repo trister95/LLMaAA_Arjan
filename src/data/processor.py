@@ -35,7 +35,7 @@ class Processor:
         
         data = ner_reader(tokenizer, self.dataset_name, self.cache_name,
                           self.use_cache)
-        
+              
         self.tokenized_datasets = DatasetDict({
             split: Dataset.from_dict(data[split])
             for split in data

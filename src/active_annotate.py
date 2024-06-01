@@ -104,6 +104,8 @@ def active_learning_loop(args):
     dev_features = data_processor.get_features(split='demo')
     test_features = data_processor.get_features(split='test')
     assert args.strategy in ['random', 'entropy', 'confidence', 'kmeans', 'hybrid']
+
+    print(pool_features)
     reduction = 'sum' if args.dataset == 'en_conll03' else 'mean'
     # reduction = 'sum'
     if args.strategy == 'random':
