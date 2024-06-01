@@ -7,12 +7,12 @@ MAX_LEN = 512
 
 def convert_span_labels_to_sequence_labels(tokens, span_label, language):
     """
-    Convert span labels to IOBES sequence labels, which are compatible with common NER evaluators.
+    Covert span labels to sequence labels.
     Language: en/zh
     """
     span_label = sorted(span_label, key=lambda x: len(x['span']), reverse=True)
     span_to_type = {entity['span']: entity['type'] for entity in span_label}
-    
+    # get words list
     if language == 'zh':
         text = ''.join(tokens)
         for entity in span_label:
@@ -20,6 +20,7 @@ def convert_span_labels_to_sequence_labels(tokens, span_label, language):
             text = ('[sep]' + span + '[sep]').join(text.split(span))
         words = text.split('[sep]')
     else:
+        # build a tokenizer first
         dictionary = dict()
         for token in tokens:
             if token not in dictionary:
@@ -27,104 +28,129 @@ def convert_span_labels_to_sequence_labels(tokens, span_label, language):
         id_string = ' '.join([dictionary[token] for token in tokens])
         for entity in span_label:
             span_tokens = entity['span'].strip().split(' ')
-            if not all(token in dictionary for token in span_tokens):
+            # validate span token
+            valid_flag = True
+            for token in span_tokens:
+                if token not in dictionary:
+                    valid_flag = False
+                    break
+            if not valid_flag:
                 continue
+            # translate span token into ids
             id_substring = ' '.join([dictionary[token] for token in span_tokens])
             id_string = ('[sep]' + id_substring + '[sep]').join(id_string.split(id_substring))
+            # print(id_string)
+        # convert back to nl
         sent = id_string
         for token in dictionary:
             sent = sent.replace(dictionary[token], token)
         words = sent.split('[sep]')
 
-    labels = []
+    seq_label = []
     for word in words:
         word = word.strip()
         if len(word) == 0:
             continue
         entity_flag = (word in span_to_type)
-        word_length = len(word.split(' ')) if language == 'en' else len(word)
-
-        if entity_flag:
-            entity_type = span_to_type[word]
-            if word_length == 1:
-                labels.append(f'S-{entity_type}')
-            else:
-                labels.extend([f'B-{entity_type}'] + [f'I-{entity_type}'] * (word_length - 2) + [f'E-{entity_type}'])
+        if language == 'en':
+            word_length = len(word.split(' '))
         else:
-            labels.extend(['O'] * word_length)
+            word_length = len(word)
+        if entity_flag:
+            if word_length == 1:
+                label = [f'S-{span_to_type[word]}']
+            else:
+                label = ([f'B-{span_to_type[word]}'] + [f'M-{span_to_type[word]}'] * (word_length - 2)
+                            + [f'E-{span_to_type[word]}'])
+        else:
+            label = ['O' for _ in range(word_length)]
+        seq_label.extend(label)
 
-    assert len(labels) == len(tokens)
-    return labels
+    assert len(seq_label) == len(tokens)
+    return seq_label        
 
-def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, cache_name: str='', use_cache: bool=True):
+
+def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str, 
+               cache_name: str= '', use_cache=True):
     """
-    Read the dataset, tokenize the data, and align the labels accordingly,
-    converting it to a format suitable for training in the Hugging Face ecosystem.
+    If use_cache is True, training labels are loaded from `cache.json`,
+    otherwise from `train.jsonl`.
     
-    Args:
-        tokenizer (PreTrainedTokenizer): The tokenizer to use for tokenizing the text.
-        dataset (str): The name of the dataset.
-        tag2id (dict): Mapping from tag names to their corresponding ids.
-
-    Returns:
-        dict: A dictionary containing tokenized and aligned datasets split by train, demo, and test.
+    Sample format:
+    {'input_ids', 'seq_label', 'id', 'text', 'labels'}
     """
+    # language
+    language = dataset[:2]
+    # path
     dir_path = os.path.dirname(os.path.realpath(__file__))
     dir_path = os.path.dirname(os.path.dirname(dir_path))
     dir_path = os.path.join(dir_path, f'data/{dataset}')
     files = {key: os.path.join(dir_path, f'{key}.jsonl') for key in ['train', 'demo', 'test']}
-
     if use_cache:
         cache_file = os.path.join(dir_path, f'{cache_name}.json')
         cache = json.load(open(cache_file, 'r', encoding='utf-8'))
-
+    # load meta data - tag2id
     meta_path = os.path.join(dir_path, 'meta.json')
-    tag2id = json.load(open(meta_path, 'r'))['tag2id']            
-    processed_data = {}
-    for split, file_path in files.items():
-        with open(file_path, 'r', encoding='utf-8') as file:
-            data = [json.loads(line.strip()) for line in file]
-            # Prepare structure for from_dict format
-            processed_data[split] = {
-                'input_ids': [],
-                'attention_mask': [],
-                'labels': [],
-                'id': [],
-                'text': [],
-                'tokens':[]
-            }
+    tag2id = json.load(open(meta_path, 'r'))['tag2id']
 
-            for sample in tqdm(data, desc=f"Processing {split} data"):
-                tokens = sample['tokens']
-                tags = sample['tags']
-                tokenized_inputs = tokenizer(tokens, is_split_into_words=True, truncation=True, padding='max_length', max_length=512)
-                
-                labels = []
-                word_ids = tokenized_inputs.word_ids()
-                previous_word_idx = None
-                for word_idx in word_ids:
-                    if word_idx is None:
-                        labels.append(-100)
-                    elif word_idx != previous_word_idx:
-                        labels.append(tag2id[tags[word_idx]])
+    dataset = {}
+    for split, file in files.items():
+        features = []
+        fd = open(file, 'r', encoding='utf-8')
+        for line in tqdm(fd, desc=split):
+            sample = json.loads(line.strip())
+            input_ids, seq_label = [], []
+            tokens, tags = sample['tokens'], sample['tags']
+
+            if split == 'train' and use_cache:
+                span_label = None
+                if sample['id'] in cache:
+                    span_label = cache[sample['id']]
+                if span_label is None:
+                    span_label = []                
+                tags = convert_span_labels_to_sequence_labels(tokens, span_label, language)
+            # assume that tags is not None
+            for word, tag in zip(tokens, tags):
+                word = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(word))
+                input_ids.extend(word)
+                if len(word) == 1:
+                    token_label = [tag2id[tag]]
+                else:       # tokenized word length > 1
+                    if tag.startswith('O') or tag.startswith('M'):
+                        token_label = [tag2id[tag]] * len(word)
                     else:
-                        labels.append(-100)
-                    previous_word_idx = word_idx
-                            
-                if split == 'train' and use_cache and sample['id'] not in cache: 
-                    labels = None
-                # Append each field separately to the correct list
+                        prefix, classtype = tag.split('-')
+                        if prefix == 'B':
+                            token_label = [tag2id[tag]] + [tag2id[f'M-{classtype}']] * (len(word) - 1)
+                        elif prefix == 'E':
+                            token_label = [tag2id[f'M-{classtype}']] * (len(word) - 1) + [tag2id[tag]]
+                        elif prefix == 'S':
+                            token_label = ([tag2id[f'B-{classtype}']] 
+                                           + [tag2id[f'M-{classtype}']] * (len(word) - 2) 
+                                           + [tag2id[f'E-{classtype}']])
+                        else:
+                            raise ValueError()
+                seq_label.extend(token_label)
+            input_ids = tokenizer.build_inputs_with_special_tokens(input_ids)
+            seq_label = [tag2id['O']] + seq_label + [tag2id['O']]
+            assert len(input_ids) == len(seq_label)
+            assert len(input_ids) <= MAX_LEN
 
-                processed_data[split]['input_ids'].append(tokenized_inputs['input_ids'])
-                processed_data[split]['attention_mask'].append(tokenized_inputs['attention_mask'])
-                processed_data[split]['labels'].append(labels)
-                processed_data[split]['id'].append(sample['id'])
-                processed_data[split]['text'].append(sample['text'])
-                processed_data[split]['tokens'].append(sample['tokens'])
-    return processed_data
+            if split == 'train' and use_cache and sample['id'] not in cache:
+                seq_label = None
 
+            sample.pop('tokens')
+            sample.pop('tags')
+            sample['input_ids'] = input_ids
+            sample['seq_label'] = seq_label
+            features.append(sample)
+        fd.close()
+        dataset[split] = features            
+    return dataset
 
 if __name__ == '__main__':
-    tokenizer = PreTrainedTokenizer.from_pretrained('bert-base-cased')
-    dataset = ner_reader(tokenizer, 'en_conll03', 'cache_en_conll03', True)
-    print(dataset['train'][0])
+    tokenizer = AutoTokenizer.from_pretrained('bert-base-cased')
+    dataset = ner_reader(tokenizer, 'en_conll03', use_cache=True)
+    f = dataset['train'][0]
+    print(f)
+    print(tokenizer.convert_ids_to_tokens(f['input_ids']))

@@ -101,7 +101,6 @@ def active_learning_loop(args):
     config.model_name_or_path = args.model_name_or_path
     # get data
     pool_features = data_processor.get_features(split='train')
-    #pool_features = pool_features.shuffle(seed=42).select(range(int(0.1 * len(pool_features)))) #edit this out after testing
     dev_features = data_processor.get_features(split='demo')
     test_features = data_processor.get_features(split='test')
     assert args.strategy in ['random', 'entropy', 'confidence', 'kmeans', 'hybrid']
@@ -151,46 +150,34 @@ def active_learning_loop(args):
     for i in active_learning_iterator:
         print('========== begin active learning loop {} =========='.format(i))
         ugly_log(args.log_file, '========== begin active learning loop {} =========='.format(i))
-        # get features
-        train_features = strategy.get_labeled_data(pool_features) #problem is here
         
+        # get train_features
+        train_features = strategy.get_labeled_data(pool_features)
         print(f'# of training data: {len(train_features)}')
-        # debug
-        if args.store_track:
-            if i == 0:
-                batch_indices = copy.deepcopy(strategy.lab_data_mask)
-            else:
-                batch_indices = np.logical_xor(strategy.lab_data_mask, batch_indices)
-            batch_features = [pool_features[i] for i in np.where(batch_indices)[0] if pool_features[i]['labels'] is not None]
-            batch_indices = copy.deepcopy(strategy.lab_data_mask)
-
-            path = os.path.dirname(os.path.realpath(__file__))
-            path = os.path.dirname(path)
-            debug_file = os.path.join(path, f'logs/debug_{args.strategy}.jsonl')
-            ugly_log(debug_file, f'========== data in loop {i} ==========')
-            ugly_log(debug_file, str(len(train_features)))
-            for f in batch_features:
-                ugly_log(debug_file, json.dumps(f, ensure_ascii=False))
-
         
+        #train a model, based on the train_features
         model = train(args, train_features, dev_features, model, config.id2label, tokenizer)
-        # acquire new data
+
+        # get new data
         if i == args.acquisition_time:
             continue
         print('========== acquiring new data ==========')
-        # compute num of init samples
-        if args.quadratic_selection:
-            factor = int(args.budget / ((args.acquisition_time + 1) ** 2))
-            k = factor * (2 * i + 3)
-            if i == args.acquisition_time - 1:
-                k = args.budget - factor * ((args.acquisition_time) ** 2)
-        else:
-            k = args.acquisition_samples
+        k = args.acquisition_samples
+        
+        #select new texts to annotate
         indices = strategy.query(args, k, pool_features, model)
+        
+        #annotate these new texts
         records = strategy.update(indices, pool_features)
+        
         if len(records) > 0:
+            #put the new_annotations in cache
             data_processor.update_cache(records)
+
+            #loading in the updated dataset; this one should be checked. Don't think it's working.
             data_processor.reload()
+
+            #get the new pool_features
             pool_features = data_processor.get_features(split='train')
 
 

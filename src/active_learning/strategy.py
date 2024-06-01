@@ -14,10 +14,8 @@ class Strategy(ABC):
         self.lab_data_mask = np.zeros(pool_size, dtype=bool)
         self.annotator = Annotator(engine, annotator_config_name)
         self.dataset = self.annotator.dataset
-        if self.dataset in ['en_conll03', 'zh_msra', 'zh_onto4']:
+        if self.dataset in ['en_conll03', 'planimals']:
             self.task_type = 'ner'
-        elif self.dataset in ['en_semeval10', 'en_retacred']:
-            self.task_type = 're'
         else:
             raise ValueError('Unknown dataset.')
         self.setting = setting

@@ -2,7 +2,6 @@ import os
 import json
 from transformers import AutoTokenizer
 from datasets import Dataset, DatasetDict
-import numpy as np
 from .ner_reader import ner_reader
 
 
