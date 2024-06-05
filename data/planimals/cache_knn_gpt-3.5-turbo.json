@@ -1,0 +1,139 @@
+{
+  "35": [],
+  "39": [
+    {
+      "span": "muurschilderingen",
+      "type": "Plant-Part-Lit"
+    },
+    {
+      "span": "meubels",
+      "type": "Plant-Prod-Lit"
+    }
+  ],
+  "251": [],
+  "321": [],
+  "439": [
+    {
+      "span": "Sap",
+      "type": "Plant-Prod-Lit"
+    }
+  ],
+  "576": [],
+  "582": [],
+  "1513": [
+    {
+      "span": "Heilige Familie",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1731": [],
+  "1760": [],
+  "1963": [],
+  "2304": [],
+  "2750": [
+    {
+      "span": "zeeën",
+      "type": "An-Coll-Lit"
+    }
+  ],
+  "3337": [],
+  "3465": [],
+  "3973": [],
+  "3999": [],
+  "4625": [],
+  "4640": [
+    {
+      "span": "wals",
+      "type": "Plant-Org-Lit"
+    },
+    {
+      "span": "Benoit's Charlotte Corday",
+      "type": "Plant-Org-Lit"
+    },
+    {
+      "span": "klavierstuk",
+      "type": "Plant-Org-Lit"
+    }
+  ],
+  "4684": [],
+  "4742": [
+    {
+      "span": "Vrouw",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "kost",
+      "type": "An-Coll-Lit"
+    }
+  ],
+  "4819": [],
+  "4947": [],
+  "5202": [],
+  "5272": [
+    {
+      "span": "Graaf van Leycester",
+      "type": "An-Org-Petrified"
+    }
+  ],
+  "5547": [
+    {
+      "span": "tranen",
+      "type": "An-Prod-Lit"
+    }
+  ],
+  "5653": [
+    {
+      "span": "lucht",
+      "type": "Plant-Org-Lit"
+    },
+    {
+      "span": "deelen",
+      "type": "Plant-Part-Lit"
+    },
+    {
+      "span": "lucht",
+      "type": "Plant-Org-Lit"
+    }
+  ],
+  "6033": [],
+  "6363": [],
+  "6590": [
+    {
+      "span": "Faunen",
+      "type": "An-Org-Petrified"
+    },
+    {
+      "span": "Silenen",
+      "type": "An-Org-Petrified"
+    }
+  ],
+  "6630": [],
+  "7051": [
+    {
+      "span": "verliezen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "vermoeienissen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7487": [],
+  "8158": [],
+  "8328": [
+    {
+      "span": "vloot",
+      "type": "Plant-Coll-Lit"
+    }
+  ],
+  "8362": [
+    {
+      "span": "Willem",
+      "type": "Plant-Coll-Petrified"
+    }
+  ],
+  "8847": [],
+  "9896": [],
+  "9920": [],
+  "9930": []
+}

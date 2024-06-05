@@ -35,15 +35,6 @@ class Annotator:
         self.output_parser = output_parsers.StrOutputParser()
         self.chain = self.prompt_template | self.llm | self.output_parser
 
-    def _generate_prompt(self, sample, demo = None):
-        to_annotate = self.input_format.format(sample['text'])
-        if demo:
-            print("demo:", demo)
-            demo_annotations = "\n".join(f"{self.input_format.format(d['text'])}\n{self.output_format.format(d['labels'])}" for d in demo)
-            return f"here are some examples:\n{demo_annotations}\n \n Please now annotate the following input: \n {to_annotate}"
-        else:
-            return f"please annote the following input: \n{to_annotate}"
-
     def generate_prompt(self, sample, demo=None):
         to_annotate = self.input_format.format(json.dumps(sample['text']))
         if demo:
@@ -57,11 +48,15 @@ class Annotator:
     @func_set_timeout(60)
     def online_annotate(self, sample, demo=None):
         annotation_prompt = self.generate_prompt(sample, demo)
+        print("here's the prompt:")
+        print(annotation_prompt)
         retry_count = 0  # Initialize retry counter
 
         while retry_count < 3:  # Allow up to 3 attempts (initial + 2 retries)
             try:
                 response = self.chain.invoke({"input": annotation_prompt})
+                print("here's the response")
+                print(response)
                 parsed_result = json.loads(response)
                 return self.postprocess(parsed_result)
 

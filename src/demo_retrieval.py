@@ -88,7 +88,7 @@ if __name__ == '__main__':
                         default='paraphrase-multilingual-mpnet-base-v2', type=str)
     parser.add_argument('--device', default='cuda:0', type=str)
     parser.add_argument('--seed', default=3407, type=int)
-    parser.add_argument('--method', default='random', type=str)
+    parser.add_argument('--method', default='knns', type=str)
     args = parser.parse_args()
 
     if args.method == 'random':

@@ -55,7 +55,7 @@ def get_opt():
     parser.add_argument('--acquisition_time', default=9, type=int)
     parser.add_argument('--strategy', default='confidence', type=str)
     # annotator related
-    parser.add_argument('--engine', default='gpt-3.5-turbo', type=str)
+    parser.add_argument('--engine', default='gpt-4o', type=str)
     parser.add_argument('--annotator_config_name', default='en_conll03_base', type=str)
     parser.add_argument('--annotator_setting', default='knn', type=str,
                         help='The setting to retrieve demo.')
