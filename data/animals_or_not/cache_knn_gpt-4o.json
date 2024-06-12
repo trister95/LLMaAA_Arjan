@@ -1,0 +1,285 @@
+{
+  "321": [],
+  "439": [],
+  "576": [],
+  "582": [],
+  "1494": [],
+  "1731": [],
+  "1963": [],
+  "2249": [],
+  "2678": [],
+  "2750": [],
+  "3122": [
+    {
+      "span": "ezelinne",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3337": [],
+  "3400": [
+    {
+      "span": "Het wilde zwijn",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "honden",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "dier",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3999": [],
+  "4194": [
+    {
+      "span": "kiekskens",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4521": [],
+  "4625": [],
+  "4640": [],
+  "4684": [],
+  "4742": [],
+  "4947": [],
+  "4949": [],
+  "5202": [],
+  "5272": [],
+  "5589": [],
+  "5653": [],
+  "6033": [],
+  "6163": [
+    {
+      "span": "ezelen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "kemelen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "muylen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "runderen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "schapen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6252": [],
+  "6340": [],
+  "6363": [],
+  "6517": [],
+  "6590": [],
+  "6595": [
+    {
+      "span": "koeijen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "schapen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7051": [],
+  "7457": [
+    {
+      "span": "beest",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Leeuw",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7487": [],
+  "7529": [
+    {
+      "span": "rotten",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7728": [
+    {
+      "span": "schapen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "lamm'r",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7825": [
+    {
+      "span": "buffels",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8158": [],
+  "8243": [],
+  "8328": [],
+  "8403": [],
+  "8847": [],
+  "9485": [],
+  "9896": [],
+  "9920": [],
+  "9930": [],
+  "76": [],
+  "80": [
+    {
+      "span": "oesters",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "kreeften",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "135": [
+    {
+      "span": "paerden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "367": [],
+  "3728": [],
+  "3746": [],
+  "4066": [],
+  "4123": [],
+  "4322": [],
+  "4360": [],
+  "4377": [
+    {
+      "span": "Nachtegaal",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4442": [
+    {
+      "span": "schapen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4594": [],
+  "4639": [],
+  "4741": [],
+  "4948": [],
+  "5271": [],
+  "5459": [],
+  "6330": [],
+  "6392": [],
+  "6533": [],
+  "6763": [
+    {
+      "span": "vlinders",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "bij",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6839": [],
+  "7050": [],
+  "7214": [],
+  "8007": [],
+  "8636": [],
+  "8834": [
+    {
+      "span": "hond",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "honden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8854": [],
+  "8856": [
+    {
+      "span": "Vis",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Hay",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9011": [],
+  "9202": [],
+  "9239": [],
+  "9340": [],
+  "9569": [],
+  "9626": [
+    {
+      "span": "musschen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "duiven",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "39": [],
+  "251": [],
+  "1513": [],
+  "1760": [],
+  "2304": [],
+  "3464": [],
+  "5546": [],
+  "6731": [],
+  "6946": [],
+  "7017": [],
+  "8362": [],
+  "8580": [],
+  "35": [],
+  "2254": [],
+  "2586": [],
+  "4529": [
+    {
+      "span": "Voorns",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Voorns",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5852": [],
+  "9401": [
+    {
+      "span": "Salamander",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Salamander",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9477": [
+    {
+      "span": "bijjen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1691": [],
+  "6540": [
+    {
+      "span": "culex pipiens",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "horzels",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "meikevers",
+      "type": "An-Org-Lit"
+    }
+  ]
+}

@@ -12,10 +12,9 @@ RETRY = 3
 class Strategy(ABC):
     def __init__(self, annotator_config_name, pool_size, setting: str='knn', engine: str='gpt-3.5'):
         self.lab_data_mask = np.zeros(pool_size, dtype=bool)
-        print("pool_size",pool_size)
         self.annotator = Annotator(engine, annotator_config_name)
         self.dataset = self.annotator.dataset
-        if self.dataset in ['en_conll03', 'planimals']:
+        if self.dataset in ['en_conll03', 'planimals', 'animals_or_not']:
             self.task_type = 'ner'
         else:
             raise ValueError('Unknown dataset.')
@@ -66,6 +65,32 @@ class Strategy(ABC):
         self.lab_data_mask[indices] = True
         return indices
     
+    def init_enriched_labeled_data(self, features, n_sample: int=None):
+        if n_sample is None:
+            raise ValueError('Please specify initial sample ratio/size.')
+        assert n_sample <= len(self)
+
+        indices = np.arange(len(self))
+        np.random.shuffle(indices)
+        #n_random = int(3/4*n_sample)
+        #random_indices = indices[: n_random]
+        
+        wanted_indices = []
+        
+        for e in indices:
+            feature = features[int(e)]
+            judgement = self.annotator.enrichment_online_annotate(feature)
+            if judgement ==True:
+                wanted_indices.append(e)
+                if len(wanted_indices) == (n_sample):
+                    break
+
+        #random_plus_wanted= list(random_indices) + list(wanted_indices)
+        enriched_indices = np.array(wanted_indices)
+        self.lab_data_mask[enriched_indices] = True
+        return enriched_indices
+    
+
     def update(self, indices, features):
         self.lab_data_mask[indices] = True
         records = self.annotate(features)

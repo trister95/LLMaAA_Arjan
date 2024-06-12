@@ -63,6 +63,7 @@ class Processor:
     
     def get_features(self, split: str):
         if split in self.tokenized_datasets:
+            #if split == 'train':
             return self.tokenized_datasets[split]
         else:
             raise ValueError(f"Split '{split}' not found in dataset")

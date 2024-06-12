@@ -1,5 +1,7 @@
 import ujson as json
 import os
+import re
+
 from func_timeout import func_set_timeout
 from openai import RateLimitError
 from langchain_core import prompts, output_parsers
@@ -35,6 +37,18 @@ class Annotator:
         self.output_parser = output_parsers.StrOutputParser()
         self.chain = self.prompt_template | self.llm | self.output_parser
 
+        # Setup for enrichment strategy
+        self.enrichment_description = config["enrichment_description"] #must put in config
+        self.enrichment_llm = ChatOpenAI(api_key=os.getenv("OPENAI_API_KEY"), model="gpt-3.5-turbo-0125")
+        self.enrichment_prompt_template = prompts.ChatPromptTemplate.from_messages([
+            ("system", self.enrichment_description), 
+            ("user", "{input}")
+        ])
+        self.enrichment_output_parser = output_parsers.StrOutputParser()
+        self.enrichment_chain = self.enrichment_prompt_template | self.enrichment_llm | self.enrichment_output_parser
+
+
+
     def generate_prompt(self, sample, demo=None):
         to_annotate = self.input_format.format(json.dumps(sample['text']))
         if demo:
@@ -48,17 +62,12 @@ class Annotator:
     @func_set_timeout(60)
     def online_annotate(self, sample, demo=None):
         annotation_prompt = self.generate_prompt(sample, demo)
-        print("here's the prompt:")
-        print(annotation_prompt)
         retry_count = 0  # Initialize retry counter
 
         while retry_count < 3:  # Allow up to 3 attempts (initial + 2 retries)
             try:
                 response = self.chain.invoke({"input": annotation_prompt})
-                print("here's the response")
-                print(response)
-                parsed_result = json.loads(response)
-                return self.postprocess(parsed_result)
+                return self.postprocess(response) #samesies
 
             except RateLimitError:
                 print("Rate limit exceeded. Please wait and try again.")
@@ -78,24 +87,69 @@ class Annotator:
 
         return None
     
-
     def postprocess(self, result):
-        if self.task == 'ner':
-            dir_path = os.path.dirname(os.path.realpath(__file__))
-            dir_path = os.path.dirname(os.path.dirname(dir_path))
-            meta_path = os.path.join(dir_path, f'data/{self.dataset}/meta.json')
-            with open(meta_path, 'r') as file:
-                meta = json.load(file)
-            tagset = meta['tagset']
-            outputs = []
-            for entity in result:
-                if not isinstance(entity, dict):
-                    continue
-                if 'type' not in entity or 'span' not in entity:
-                    continue
-                if entity['type'] in tagset:
-                    outputs.append(entity)
-            return outputs
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        dir_path = os.path.dirname(os.path.dirname(dir_path))
+        meta_path = os.path.join(dir_path, f'data/{self.dataset}/meta.json')
+        with open(meta_path, 'r') as file:
+            meta = json.load(file)
+        tagset = meta['tagset']
+        list_pattern = r"\[([^\]]*)\]"
+        match = re.search(list_pattern, result)
+        if match:
+            # Convert the matched string into a list if it is not empty, otherwise create an empty list
+            extracted_result = eval(f"[{match.group(1)}]") if match.group(1) else []
+        else:
+            print("No list found.")
+
+        outputs = []
+        for entity in extracted_result:
+            if not isinstance(entity, dict):
+                continue
+            if 'type' not in entity or 'span' not in entity:
+                continue
+            if entity['type'] in tagset:
+                outputs.append(entity)
+        return outputs
+        
+    @func_set_timeout(60)
+    def enrichment_online_annotate(self, sample):
+        def string_to_bool(s):
+            if s.lower() == 'true':
+                return True
+            elif s.lower() == 'false':
+                return False
+            else:
+                raise ValueError("Input must be 'true' or 'false'")
+        #should maybe add function calling in api
+        annotation_prompt = self.input_format.format(json.dumps(sample['text']))
+        retry_count = 0  # Initialize retry counter
+
+        while retry_count < 3:  # Allow up to 3 attempts (initial + 2 retries)
+            try:
+                response = self.enrichment_chain.invoke({"input": annotation_prompt})
+                match = re.search(r"\b(True|False)\b", response)
+                if match:
+                    return string_to_bool(match.group(0))
+                else:
+                    return False
+
+            except RateLimitError:
+                print("Rate limit exceeded. Please wait and try again.")
+                print(f"Problem was with: {annotation_prompt}")
+                return None
+
+            except Exception as e:
+                print(f"Error during annotation: {e}")
+                print(f"Problem was with: {annotation_prompt}")
+                retry_count += 1  # Increment retry counter
+
+                if retry_count == 3:
+                    print("Max retries reached. Aborting operation.")
+                    return None
+
+                print("Retrying...")
+        return None
     
 if __name__ == '__main__':
     annotator = Annotator(engine='gpt-3.5-turbo', config_name='en_conll03')

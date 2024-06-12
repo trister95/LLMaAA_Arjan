@@ -69,7 +69,7 @@ def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str,
     {'input_ids', 'seq_label', 'id', 'text', 'labels'}
     """
     # language 
-    language = dataset[:2]
+    #language = dataset[:2]
     # path
     dir_path = os.path.dirname(os.path.realpath(__file__))
     dir_path = os.path.dirname(os.path.dirname(dir_path))
@@ -99,8 +99,9 @@ def ner_reader(tokenizer: PreTrainedTokenizer, dataset: str,
                     span_label = cache[sample['id']]
                 if span_label is None:
                     span_label = []                
-                if tags != []:
-                    tags = convert_span_labels_to_sequence_labels(tokens, span_label, language)
+                #if tags != []:
+                #    print("tags were not empty and this is what it becomes:")
+                tags = convert_span_labels_to_sequence_labels(tokens, span_label)
             # assume that tags is not None
             for word, tag in zip(tokens, tags):
                 word = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(word))

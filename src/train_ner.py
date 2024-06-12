@@ -87,6 +87,14 @@ def train_ner(args, train_dataset, dev_dataset, model, id2label, tokenizer):
     data_collator = DataCollatorForTokenClassification(tokenizer)
     compute_metrics_with_id2label = partial(compute_metrics, label_array=label_array, log_file=args.log_file)
 
+    for e in dev_dataset:
+        print(e)
+        print("dit is, hierboven, de validatieset")
+
+    for e in train_dataset:
+        print(e)
+        print("dit is, hierboven, de trainingsset")
+
     training_args = TrainingArguments(
         output_dir=args.save_path,
         evaluation_strategy="epoch",
@@ -96,13 +104,11 @@ def train_ner(args, train_dataset, dev_dataset, model, id2label, tokenizer):
         per_device_eval_batch_size=args.test_batch_size,
         num_train_epochs=args.num_train_epochs,
         save_total_limit=3,  # Keep only the most recent best model according to the evaluation
-        greater_is_better=True,  # Set true if higher scores on the metric are better
         load_best_model_at_end=True,  # Load the best model at the end of training
         weight_decay=0.01,
         seed=args.seed,
         push_to_hub=True,
         hub_model_id=args.model_name_on_hub,
-        metric_for_best_model="f1",
     )
 
     setattr(training_args, 'reweight', True)  # or False, depending on your requirement

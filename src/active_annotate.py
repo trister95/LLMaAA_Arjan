@@ -55,7 +55,7 @@ def get_opt():
     parser.add_argument('--acquisition_time', default=9, type=int)
     parser.add_argument('--strategy', default='confidence', type=str)
     # annotator related
-    parser.add_argument('--engine', default='gpt-4o', type=str)
+    parser.add_argument('--engine', default='gpt-4o', type=str) #gpt-3.5-turbo-0125
     parser.add_argument('--annotator_config_name', default='en_conll03_base', type=str)
     parser.add_argument('--annotator_setting', default='knn', type=str,
                         help='The setting to retrieve demo.')
@@ -72,6 +72,9 @@ def get_opt():
                         help='Whether to push the model to Hugging Face Hub.')
     parser.add_argument('--model_name_on_hub', default='ArjanvD95/a_model_i_should_have_given_a_proper_name', type=str,
                         help='Model name on Hugging Face Hub.')
+    #enriched
+    parser.add_argument('--enriched', default=False)
+
     return parser.parse_args()
 
 def active_learning_loop(args):
@@ -105,7 +108,6 @@ def active_learning_loop(args):
     test_features = data_processor.get_features(split='test')
     assert args.strategy in ['random', 'entropy', 'confidence', 'kmeans', 'hybrid']
 
-    print(pool_features)
     reduction = 'sum' if args.dataset == 'en_conll03' else 'mean'
     # reduction = 'sum'
     if args.strategy == 'random':
@@ -130,9 +132,13 @@ def active_learning_loop(args):
         n_init_samples = factor
     else:
         n_init_samples = args.init_samples
-    indices = strategy.init_labeled_data(n_sample=n_init_samples)
+    
+    if args.enriched:
+        indices = strategy.init_enriched_labeled_data(n_sample=n_init_samples, features = pool_features)
+    else:
+        indices = strategy.init_labeled_data(n_sample=n_init_samples)
+    
     records = strategy.update(indices, pool_features)
-
 
     if len(records) > 0:
         data_processor.update_cache(records)
@@ -152,13 +158,10 @@ def active_learning_loop(args):
     for i in active_learning_iterator:
         print('========== begin active learning loop {} =========='.format(i))
         ugly_log(args.log_file, '========== begin active learning loop {} =========='.format(i))
-        
-        # get train_features
         train_features = strategy.get_labeled_data(pool_features)
         print(f'# of training data: {len(train_features)}')
-        
         #train a model, based on the train_features
-        model = train(args, train_features, dev_features, model, config.id2label, tokenizer)
+        model = train(args, train_features, test_features, model, config.id2label, tokenizer) 
 
         # get new data
         if i == args.acquisition_time:
@@ -185,7 +188,9 @@ def active_learning_loop(args):
 
 
 if __name__ == '__main__':
-    warnings.filterwarnings("ignore", message="seems not to NE-tag")
+    # Suppress the specific warning message from seqeval
+    warnings.filterwarnings('ignore', message='.*NE tag.*')
+    # Your model training code here
     env = Env()
     env.read_env(".env")
     OPENAI_API_KEY = env.str("OPENAI_API_KEY")
