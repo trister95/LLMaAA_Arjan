@@ -281,5 +281,179 @@
       "span": "meikevers",
       "type": "An-Org-Lit"
     }
+  ],
+  "10": [],
+  "334": [
+    {
+      "span": "dierkens",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "708": [
+    {
+      "span": "olijphanten",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1393": [],
+  "1496": [
+    {
+      "span": "peerdekens",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1880": [],
+  "2138": [
+    {
+      "span": "steekeltje",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2210": [
+    {
+      "span": "kat",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "muis",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2412": [],
+  "3457": [],
+  "4374": [
+    {
+      "span": "kameelen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4672": [
+    {
+      "span": "os",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4780": [
+    {
+      "span": "Ezels",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Schaapen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Geiten",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Varkens",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4919": [],
+  "5027": [],
+  "5122": [
+    {
+      "span": "leeuw",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "beer",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5139": [
+    {
+      "span": "konijnen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5218": [
+    {
+      "span": "muschjes",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5380": [],
+  "6308": [
+    {
+      "span": "olifant",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "rhinoceros",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "rotten",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "muizen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6456": [],
+  "6969": [],
+  "7208": [
+    {
+      "span": "dier",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7749": [],
+  "8201": [],
+  "8384": [],
+  "8492": [
+    {
+      "span": "auerhoen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8696": [
+    {
+      "span": "het groote vee",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "het kleyne vee",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "de kruypende gedierten",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8701": [],
+  "9048": [],
+  "9109": [],
+  "9195": [
+    {
+      "span": "paard",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9246": [
+    {
+      "span": "Wal-Russen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Zee-paerden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9454": [
+    {
+      "span": "bode",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9620": [
+    {
+      "span": "schapen",
+      "type": "An-Org-Lit"
+    }
   ]
 }

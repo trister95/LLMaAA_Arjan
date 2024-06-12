@@ -2,7 +2,7 @@ import ujson as json
 import os
 import re
 import asyncio
-import aiohttp
+
 from func_timeout import func_set_timeout
 from openai import RateLimitError
 from langchain_core import prompts, output_parsers
@@ -115,48 +115,45 @@ class Annotator:
                 outputs.append(entity)
         return outputs
 
-    @staticmethod
-    async def string_to_bool(s):
+    def string_to_bool(s):
         if s.lower() == 'true':
             return True
         elif s.lower() == 'false':
             return False
         else:
             raise ValueError("Input must be 'true' or 'false'")        
+    
+    @func_set_timeout(60)
+    def enrichment_online_annotate(self, sample):
+        #should maybe add function calling in api
+        annotation_prompt = self.input_format.format(json.dumps(sample['text']))
+        retry_count = 0  # Initialize retry counter
 
-    async def process_sentence_async(self, sample):
-        async with self.limiter:
-            annotation_prompt = self.input_format.format(json.dumps(sample['text']))
-            retry_count = 0  # Initialize retry counter
+        while retry_count < 3:  # Allow up to 3 attempts (initial + 2 retries)
+            try:
+                response = self.enrichment_chain.invoke({"input": annotation_prompt})
+                match = re.search(r"\b(True|False)\b", response)
+                if match:
+                    return string_to_bool(match.group(0))
+                else:
+                    return False
 
-            while retry_count < 3:  # Allow up to 3 attempts (initial + 2 retries)
-                try:
-                    response = await asyncio.wait_for(self.enrichment_chain.ainvoke({"input": annotation_prompt}), timeout=60)
-                    match = re.search(r"\b(True|False)\b", response)
-                    if match:
-                        return await self.string_to_bool(match.group(0))
-                    else:
-                        return False
+            except RateLimitError:
+                print("Rate limit exceeded. Please wait and try again.")
+                print(f"Problem was with: {annotation_prompt}")
+                return None
 
-                except RateLimitError:
-                    print("Rate limit exceeded. Please wait and try again.")
-                    print(f"Problem was with: {annotation_prompt}")
+            except Exception as e:
+                print(f"Error during annotation: {e}")
+                print(f"Problem was with: {annotation_prompt}")
+                retry_count += 1  # Increment retry counter
+
+                if retry_count == 3:
+                    print("Max retries reached. Aborting operation.")
                     return None
 
-                except Exception as e:
-                    print(f"Error during annotation: {e}")
-                    print(f"Problem was with: {annotation_prompt}")
-                    retry_count += 1  # Increment retry counter
-
-                    if retry_count == 3:
-                        print("Max retries reached. Aborting operation.")
-                        return None
-
-                    print("Retrying...")
-            return None
-
-    async def process_batch_llm_async(self, batch):
-        return await asyncio.gather(*[self.process_sentence_async(sentence) for sentence in batch])
+                print("Retrying...")
+        return None
     
 if __name__ == '__main__':
     annotator = Annotator(engine='gpt-3.5-turbo', config_name='en_conll03')
@@ -164,3 +161,95 @@ if __name__ == '__main__':
     demo = [sample]
     print(annotator.online_annotate(sample))
 
+
+
+import asyncio
+import aiohttp
+import json
+import re
+
+async def string_to_bool(s):
+        if s.lower() == 'true':
+            return True
+        elif s.lower() == 'false':
+            return False
+        else:
+            raise ValueError("Input must be 'true' or 'false'")        
+
+
+func_set_timeout(60)
+async def process_sentence_async(self, sample):
+    async with self.limiter:
+        annotation_prompt = self.input_format.format(json.dumps(sample['text']))
+        retry_count = 0  # Initialize retry counter
+
+        while retry_count < 3:  # Allow up to 3 attempts (initial + 2 retries)
+            try:
+                response = self.enrichment_chain.ainvoke({"input": annotation_prompt})
+                match = re.search(r"\b(True|False)\b", response)
+                if match:
+                    return await string_to_bool(match.group(0))
+                else:
+                    return False
+
+            except RateLimitError:
+                print("Rate limit exceeded. Please wait and try again.")
+                print(f"Problem was with: {annotation_prompt}")
+                return None
+
+            except Exception as e:
+                print(f"Error during annotation: {e}")
+                print(f"Problem was with: {annotation_prompt}")
+                retry_count += 1  # Increment retry counter
+
+                if retry_count == 3:
+                    print("Max retries reached. Aborting operation.")
+                    return None
+
+                print("Retrying...")
+        return None
+
+async def process_batch_llm_async(self, batch):
+    return await asyncio.gather(*[process_sentence_async(sentence, self.enrichment_chain, self.limiter) for sentence in batch])
+
+
+
+    def string_to_bool(self, s):
+        if s.lower() == 'true':
+            return True
+        elif s.lower() == 'false':
+            return False
+        else:
+            raise ValueError("Input must be 'true' or 'false'")
+
+    async def enrichment_online_annotate(self, sample):
+        annotation_prompt = self.input_format.format(json.dumps(sample['text']))
+        retry_count = 0  # Initialize retry counter
+
+        while retry_count < 3:  # Allow up to 3 attempts (initial + 2 retries)
+            try:
+                async with aiohttp.ClientSession() as session:
+                    async with session.post('API_URL', json={"input": annotation_prompt}) as resp:
+                        if resp.status == 200:
+                            response = await resp.text()
+                            match = re.search(r"\b(True|False)\b", response)
+                            if match:
+                                return await self.string_to_bool(match.group(0))
+                            else:
+                                return False
+                        else:
+                            raise Exception(f"HTTP error {resp.status}")
+            except aiohttp.ClientError as e:
+                print("HTTP request failed:", e)
+                retry_count += 1
+            except Exception as e:
+                print(f"Error during annotation: {e}")
+                retry_count += 1  # Increment retry counter
+
+                if retry_count == 3:
+                    print("Max retries reached. Aborting operation.")
+                    return None
+
+                print("Retrying...")
+
+        return None

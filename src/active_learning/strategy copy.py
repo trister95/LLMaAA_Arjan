@@ -65,45 +65,33 @@ class Strategy(ABC):
         self.lab_data_mask[indices] = True
         return indices
     
-    async def init_enriched_labeled_data(self, features, n_sample=None):
+    def init_enriched_labeled_data(self, features, n_sample: int=None):
         if n_sample is None:
             raise ValueError('Please specify initial sample ratio/size.')
-        if n_sample > len(self):
-            raise ValueError('Sample size cannot be greater than the data size.')
+        assert n_sample <= len(self)
 
         indices = np.arange(len(self))
         np.random.shuffle(indices)
-
-        batch_size = 20  # Fixed batch size
+        #n_random = int(3/4*n_sample)
+        #random_indices = indices[: n_random]
+        
         wanted_indices = []
+        
+        for e in indices:
+            feature = features[int(e)]
+            judgement = self.annotator.enrichment_online_annotate(feature)
+            if judgement ==True:
+                wanted_indices.append(e)
+                if len(wanted_indices) == (n_sample):
+                    break
 
-        # Process data in batches of 20
-        for i in range(0, len(indices), batch_size):
-            if len(wanted_indices) >= n_sample:
-                break  # Stop if we already have the required number of samples
-
-            batch = [idx for idx in indices[i: i + batch_size]]
-            batch_features = [features[int(idx)] for idx in indices[i: i + batch_size]]
-            batch_results = await self.annotator.process_batch_llm_async(batch_features)  # Adjust as needed
-
-            # Check results and collect indices of true judgements
-            for j, judgement in enumerate(batch_results):
-                if judgement:
-                    wanted_indices.append(indices[i + j])
-                    print(len(wanted_indices))
-                    if len(wanted_indices) >= n_sample:
-                        break  # Stop collecting if we reach the required number
-
-        # Trim the wanted_indices if they exceed n_sample
-        if len(wanted_indices) > n_sample:
-            wanted_indices = wanted_indices[:n_sample]
-
-        self.lab_data_mask[wanted_indices] = True
-        return wanted_indices
-   
+        #random_plus_wanted= list(random_indices) + list(wanted_indices)
+        enriched_indices = np.array(wanted_indices)
+        self.lab_data_mask[enriched_indices] = True
+        return enriched_indices
+    
 
     def update(self, indices, features):
-        print(indices)
         self.lab_data_mask[indices] = True
         records = self.annotate(features)
         return records
@@ -138,3 +126,37 @@ class Strategy(ABC):
                     results[feature['id']] = result
         return results
     
+    async def init_enriched_labeled_data(self, features, n_sample=None):
+        if n_sample is None:
+            raise ValueError('Please specify initial sample ratio/size.')
+        if n_sample > len(self.data):
+            raise ValueError('Sample size cannot be greater than the data size.')
+
+        indices = np.arange(len(self.data))
+        np.random.shuffle(indices)
+
+        batch_size = 20  # Fixed batch size
+        wanted_indices = []
+
+        # Process data in batches of 20
+        for i in range(0, len(indices), batch_size):
+            if len(wanted_indices) >= n_sample:
+                break  # Stop if we already have the required number of samples
+
+            batch = [self.data[idx] for idx in indices[i: i + batch_size]]
+            batch_features = [features[idx] for idx in indices[i: i + batch_size]]
+            batch_results = await self.annotator.process_batches(batch, batch_features)  # Adjust as needed
+
+            # Check results and collect indices of true judgements
+            for j, judgement in enumerate(batch_results):
+                if judgement:
+                    wanted_indices.append(indices[i + j])
+                    if len(wanted_indices) >= n_sample:
+                        break  # Stop collecting if we reach the required number
+
+        # Trim the wanted_indices if they exceed n_sample
+        if len(wanted_indices) > n_sample:
+            wanted_indices = wanted_indices[:n_sample]
+
+        self.lab_data_mask[wanted_indices] = True
+        return np.array(wanted_indices)
