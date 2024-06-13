@@ -73,8 +73,7 @@ def get_opt():
     parser.add_argument('--model_name_on_hub', default='ArjanvD95/a_model_i_should_have_given_a_proper_name', type=str,
                         help='Model name on Hugging Face Hub.')
     #enriched
-    parser.add_argument('--enriched', default=False)
-
+    parser.add_argument('--enrichment_fraction', default=0)
     return parser.parse_args()
 
 async def active_learning_loop(args):
@@ -133,10 +132,17 @@ async def active_learning_loop(args):
     else:
         n_init_samples = args.init_samples
     
-    if args.enriched:
-        indices = await strategy.init_enriched_labeled_data(n_sample=n_init_samples, features = pool_features)
-    else:
-        indices = strategy.init_labeled_data(n_sample=n_init_samples)
+    samples_likely_to_have_entity = []
+    enrichment_fraction = float(args.enrichment_fraction)
+    n_needed = int(args.num_train_epochs * enrichment_fraction * (args.acquisition_samples)*1.2 +args.init_samples)
+    n_enriched_indices = int(enrichment_fraction*n_init_samples)
+    print(n_needed)
+    if enrichment_fraction>0:
+        samples_likely_to_have_entity = await strategy.get_enriched_data(n_needed=n_needed, features = pool_features)
+    
+    
+    indices = strategy.init_labeled_data(n_sample=n_init_samples, samples_likely_to_have_entity = samples_likely_to_have_entity, 
+                                         n_enriched_indices =n_enriched_indices)
     
     records = strategy.update(indices, pool_features)
 
@@ -168,9 +174,9 @@ async def active_learning_loop(args):
             continue
         print('========== acquiring new data ==========')
         k = args.acquisition_samples
-        
+        k_enriched = int(enrichment_fraction*k)
         #select new texts to annotate
-        indices = strategy.query(args, k, pool_features, model)
+        indices = strategy.query(args, k, pool_features, model, samples_likely_to_have_entity, k_enriched)
         
         #annotate these new texts
         records = strategy.update(indices, pool_features)

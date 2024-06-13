@@ -455,5 +455,781 @@
       "span": "schapen",
       "type": "An-Org-Lit"
     }
+  ],
+  "53": [],
+  "93": [],
+  "141": [],
+  "438": [],
+  "484": [],
+  "503": [],
+  "779": [],
+  "1279": [],
+  "1512": [],
+  "1826": [],
+  "2785": [],
+  "3106": [],
+  "3167": [],
+  "3243": [],
+  "3274": [],
+  "4085": [],
+  "4304": [],
+  "4703": [],
+  "6798": [],
+  "7905": [],
+  "8848": [],
+  "9025": [],
+  "9327": [],
+  "9949": [],
+  "9994": [],
+  "1568": [],
+  "4216": [],
+  "4711": [],
+  "5051": [],
+  "6848": [],
+  "7149": [],
+  "8286": [],
+  "9": [],
+  "662": [],
+  "878": [],
+  "1050": [],
+  "1609": [],
+  "1737": [
+    {
+      "span": "Pluym-gediert",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1900": [],
+  "1918": [
+    {
+      "span": "wolven",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2101": [],
+  "2335": [],
+  "2362": [
+    {
+      "span": "beesten",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3195": [],
+  "3704": [
+    {
+      "span": "Den Wijtingh",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3713": [],
+  "4171": [
+    {
+      "span": "rendieren",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4587": [],
+  "4707": [],
+  "5525": [
+    {
+      "span": "Vloeijen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6065": [],
+  "6075": [],
+  "6349": [],
+  "6443": [
+    {
+      "span": "huisdieren",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6526": [],
+  "6637": [],
+  "6999": [
+    {
+      "span": "schapen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7016": [],
+  "7623": [],
+  "7656": [],
+  "8338": [],
+  "8406": [],
+  "8627": [],
+  "8681": [],
+  "9617": [],
+  "9629": [
+    {
+      "span": "beest Orca",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Walvisch",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9891": [],
+  "9989": [
+    {
+      "span": "schaepshond",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "658": [],
+  "872": [],
+  "1043": [],
+  "1429": [
+    {
+      "span": "Visschen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1601": [],
+  "1907": [],
+  "2089": [],
+  "2115": [
+    {
+      "span": "paard",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "paard",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2228": [
+    {
+      "span": "Honingbij",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2291": [
+    {
+      "span": "honden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2740": [],
+  "2898": [],
+  "3179": [],
+  "3290": [],
+  "3351": [
+    {
+      "span": "Tijgers",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3695": [],
+  "3761": [],
+  "4464": [],
+  "4566": [],
+  "5706": [],
+  "5805": [],
+  "5814": [
+    {
+      "span": "Hond",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Vogelen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5894": [
+    {
+      "span": "Paard",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6037": [],
+  "6059": [],
+  "6061": [],
+  "6318": [],
+  "6411": [
+    {
+      "span": "Vogelen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6493": [],
+  "6603": [],
+  "7107": [
+    {
+      "span": "dier",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7618": [],
+  "7970": [],
+  "8099": [
+    {
+      "span": "Gansen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8136": [
+    {
+      "span": "Gans",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Swane",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8209": [
+    {
+      "span": "schaapkens",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8289": [
+    {
+      "span": "haan",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8298": [],
+  "8365": [],
+  "8371": [],
+  "8560": [
+    {
+      "span": "schaepkens",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8584": [],
+  "8635": [],
+  "8841": [],
+  "8909": [
+    {
+      "span": "Vogels",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Dieren",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9798": [
+    {
+      "span": "kat",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9842": [],
+  "9944": [
+    {
+      "span": "hinde",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "56": [
+    {
+      "span": "Ram",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "468": [
+    {
+      "span": "Ezel",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Buffel",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "472": [
+    {
+      "span": "peerden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "657": [],
+  "870": [],
+  "957": [
+    {
+      "span": "Vogelen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1040": [],
+  "1233": [
+    {
+      "span": "wild",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1329": [],
+  "1579": [
+    {
+      "span": "lastdieren",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1729": [],
+  "1901": [],
+  "2081": [],
+  "2651": [
+    {
+      "span": "hondt",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2729": [],
+  "3102": [],
+  "3139": [],
+  "3166": [],
+  "3679": [],
+  "3913": [],
+  "4029": [
+    {
+      "span": "paarden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4276": [],
+  "4348": [
+    {
+      "span": "adder",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4429": [
+    {
+      "span": "Nautilus Papyraceus",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Nautilius",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4456": [],
+  "4547": [],
+  "4915": [],
+  "5334": [
+    {
+      "span": "het wilde zwijn",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5387": [
+    {
+      "span": "Ghediert",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5783": [],
+  "5821": [
+    {
+      "span": "Rundvee",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "5902": [],
+  "6011": [],
+  "6035": [],
+  "6225": [],
+  "6291": [],
+  "6383": [],
+  "7586": [],
+  "8162": [
+    {
+      "span": "Vink",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8257": [],
+  "8280": [
+    {
+      "span": "dier",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8540": [],
+  "8591": [],
+  "8795": [],
+  "8835": [
+    {
+      "span": "vloo",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "luis",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8950": [
+    {
+      "span": "Vogelen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "wilde Duyven",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8968": [],
+  "9130": [],
+  "9794": [],
+  "9881": [],
+  "351": [
+    {
+      "span": "paarden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "633": [
+    {
+      "span": "Haazen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "653": [],
+  "750": [
+    {
+      "span": "mus",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "865": [
+    {
+      "span": "de sangers",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1033": [],
+  "1889": [],
+  "2068": [],
+  "2173": [
+    {
+      "span": "vogelkijn",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "dierken",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2714": [],
+  "2762": [
+    {
+      "span": "Gans",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "vogel",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2883": [
+    {
+      "span": "Vee",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Vee",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2905": [],
+  "3014": [],
+  "3031": [],
+  "3114": [
+    {
+      "span": "conijnen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3148": [],
+  "3660": [],
+  "3893": [],
+  "4431": [],
+  "4554": [
+    {
+      "span": "Slanghen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4819": [],
+  "4833": [
+    {
+      "span": "Wolf",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4888": [],
+  "5222": [],
+  "5752": [],
+  "5977": [],
+  "5994": [],
+  "6001": [],
+  "6302": [
+    {
+      "span": "scaep",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6310": [],
+  "6454": [
+    {
+      "span": "lybaert",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "paert",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "ors",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6993": [
+    {
+      "span": "zwijnen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7261": [
+    {
+      "span": "Ossen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7548": [],
+  "7553": [],
+  "8216": [],
+  "8283": [],
+  "8497": [],
+  "8750": [],
+  "8956": [],
+  "8992": [],
+  "9305": [],
+  "9609": [
+    {
+      "span": "paarden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9701": [],
+  "9744": [],
+  "220": [
+    {
+      "span": "hij",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "vliegen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "588": [
+    {
+      "span": "eend",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "gans",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "650": [],
+  "860": [],
+  "1027": [],
+  "1092": [],
+  "1231": [
+    {
+      "span": "het Kalf",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "het Kalf",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "het Kalf",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1350": [
+    {
+      "span": "dieren",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "katten",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "1580": [],
+  "1871": [],
+  "1882": [],
+  "2060": [],
+  "2212": [
+    {
+      "span": "paarden",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2639": [
+    {
+      "span": "Bie",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2703": [],
+  "2858": [],
+  "2992": [
+    {
+      "span": "voghels",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "2999": [],
+  "3131": [],
+  "3188": [
+    {
+      "span": "molhuysen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3401": [
+    {
+      "span": "bruinvisch",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "vloo",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3641": [],
+  "3733": [
+    {
+      "span": "zwaluwen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3873": [],
+  "3947": [
+    {
+      "span": "conchyliën",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "visschen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3957": [
+    {
+      "span": "paerd",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "3986": [
+    {
+      "span": "krabbe",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "4409": [],
+  "4497": [],
+  "4792": [],
+  "5723": [],
+  "5945": [],
+  "5969": [],
+  "6168": [],
+  "6297": [
+    {
+      "span": "Haring",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "6828": [
+    {
+      "span": "Paard",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7177": [
+    {
+      "span": "os",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "esel",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "7399": [],
+  "7508": [],
+  "8174": [],
+  "8241": [],
+  "8454": [],
+  "8498": [
+    {
+      "span": "Bok",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8505": [
+    {
+      "span": "Leeuwen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "8706": [],
+  "8793": [
+    {
+      "span": "leeuw",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9037": [
+    {
+      "span": "peerden",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "vee",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9601": [
+    {
+      "span": "paard",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9691": [
+    {
+      "span": "Visschen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Watervogelen",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "het Dier",
+      "type": "An-Org-Lit"
+    },
+    {
+      "span": "Visschen",
+      "type": "An-Org-Lit"
+    }
+  ],
+  "9694": [
+    {
+      "span": "Nachtegael",
+      "type": "An-Org-Lit"
+    }
   ]
 }

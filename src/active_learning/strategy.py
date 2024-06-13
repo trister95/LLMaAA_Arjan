@@ -50,25 +50,37 @@ class Strategy(ABC):
         return labeled_data
     
     @abstractmethod
-    def query(self, args, k, model, features):
+    def query(self, args, k, model, features, samples_likely_to_have_entity, k_enriched):
         return
     
-    def init_labeled_data(self, n_sample: int=None):
-        if n_sample is None:
-            raise ValueError('Please specify initial sample ratio/size.')
-        
-        assert n_sample <= len(self)
-
-        indices = np.arange(len(self))
-        np.random.shuffle(indices)
-        indices = indices[: n_sample]
-        self.lab_data_mask[indices] = True
-        return indices
-    
-    async def init_enriched_labeled_data(self, features, n_sample=None):
+    def init_labeled_data(self, n_sample: int = None, samples_likely_to_have_entity = [], n_enriched_indices = 0):
         if n_sample is None:
             raise ValueError('Please specify initial sample ratio/size.')
         if n_sample > len(self):
+            raise ValueError('Initial sample size cannot be greater than the length of the data.')
+
+        indices = np.arange(len(self))
+        np.random.shuffle(indices)
+
+        a = np.array(samples_likely_to_have_entity)[:n_enriched_indices]
+        b = indices[:(n_sample - n_enriched_indices)]
+
+        # Ensure both a and b are 1-dimensional arrays
+        if a.ndim != 1 or b.ndim != 1:
+            raise ValueError("Mismatch in array dimensions or data types")
+
+        # Concatenate the arrays correctly
+        combined_indices = np.concatenate((a, b))
+
+        # Update the labeled data mask
+        self.lab_data_mask[combined_indices] = True
+
+        return combined_indices
+    
+    async def get_enriched_data(self, features, n_needed: int):
+        if n_needed is None:
+            raise ValueError('Please specify initial sample ratio/size.')
+        if n_needed > len(self):
             raise ValueError('Sample size cannot be greater than the data size.')
 
         indices = np.arange(len(self))
@@ -79,10 +91,9 @@ class Strategy(ABC):
 
         # Process data in batches of 20
         for i in range(0, len(indices), batch_size):
-            if len(wanted_indices) >= n_sample:
+            if len(wanted_indices) >= n_needed:
                 break  # Stop if we already have the required number of samples
 
-            batch = [idx for idx in indices[i: i + batch_size]]
             batch_features = [features[int(idx)] for idx in indices[i: i + batch_size]]
             batch_results = await self.annotator.process_batch_llm_async(batch_features)  # Adjust as needed
 
@@ -91,14 +102,12 @@ class Strategy(ABC):
                 if judgement:
                     wanted_indices.append(indices[i + j])
                     print(len(wanted_indices))
-                    if len(wanted_indices) >= n_sample:
+                    if len(wanted_indices) >= n_needed:
                         break  # Stop collecting if we reach the required number
 
         # Trim the wanted_indices if they exceed n_sample
-        if len(wanted_indices) > n_sample:
-            wanted_indices = wanted_indices[:n_sample]
-
-        self.lab_data_mask[wanted_indices] = True
+        if len(wanted_indices) > n_needed:
+            wanted_indices = wanted_indices[:n_needed]
         return wanted_indices
    
 

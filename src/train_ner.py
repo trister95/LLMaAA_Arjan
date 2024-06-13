@@ -87,13 +87,9 @@ def train_ner(args, train_dataset, dev_dataset, model, id2label, tokenizer):
     data_collator = DataCollatorForTokenClassification(tokenizer)
     compute_metrics_with_id2label = partial(compute_metrics, label_array=label_array, log_file=args.log_file)
 
-    for e in dev_dataset:
-        print(e)
-        print("dit is, hierboven, de validatieset")
-
     for e in train_dataset:
-        print(e)
-        print("dit is, hierboven, de trainingsset")
+        if 1 in e['labels']:
+            print(e)
 
     training_args = TrainingArguments(
         output_dir=args.save_path,

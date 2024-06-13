@@ -2,7 +2,7 @@
 # Each time a model is trained based on current annotated data.
 import argparse
 import os
-import copy
+import asyncio
 import ujson as json
 import numpy as np
 import torch
@@ -77,7 +77,7 @@ def get_opt():
 
     return parser.parse_args()
 
-def active_learning_loop(args):
+async def active_learning_loop(args):
     # get log
     path = os.path.dirname(os.path.realpath(__file__))
     path = os.path.dirname(path)
@@ -134,7 +134,7 @@ def active_learning_loop(args):
         n_init_samples = args.init_samples
     
     if args.enriched:
-        indices = strategy.init_enriched_labeled_data(n_sample=n_init_samples, features = pool_features)
+        indices = await strategy.init_enriched_labeled_data(n_sample=n_init_samples, features = pool_features)
     else:
         indices = strategy.init_labeled_data(n_sample=n_init_samples)
     
@@ -199,4 +199,4 @@ if __name__ == '__main__':
     print("Arguments parsed successfully.")
 
     set_seed(args.seed)
-    active_learning_loop(args)
+    asyncio.run(active_learning_loop(args))
