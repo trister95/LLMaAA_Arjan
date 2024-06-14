@@ -134,7 +134,7 @@ async def active_learning_loop(args):
     
     samples_likely_to_have_entity = []
     enrichment_fraction = float(args.enrichment_fraction)
-    n_needed = int(args.num_train_epochs * enrichment_fraction * (args.acquisition_samples)*1.2 +args.init_samples)
+    n_needed = 25 #int(args.num_train_epochs * enrichment_fraction * (args.acquisition_samples)*1.2 +args.init_samples)
     n_enriched_indices = int(enrichment_fraction*n_init_samples)
     print(n_needed)
     if enrichment_fraction>0:
