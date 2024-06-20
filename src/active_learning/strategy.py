@@ -101,7 +101,6 @@ class Strategy(ABC):
             for j, judgement in enumerate(batch_results):
                 if judgement:
                     wanted_indices.append(indices[i + j])
-                    print(len(wanted_indices))
                     if len(wanted_indices) >= n_needed:
                         break  # Stop collecting if we reach the required number
 
@@ -112,7 +111,6 @@ class Strategy(ABC):
    
 
     def update(self, indices, features):
-        print(indices)
         self.lab_data_mask[indices] = True
         records = self.annotate(features)
         return records

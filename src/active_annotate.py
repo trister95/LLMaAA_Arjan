@@ -134,13 +134,10 @@ async def active_learning_loop(args):
     
     samples_likely_to_have_entity = []
     enrichment_fraction = float(args.enrichment_fraction)
-    n_needed = int(args.num_train_epochs * enrichment_fraction * (args.acquisition_samples)*1.2 +args.init_samples)
+    n_needed = int(args.num_train_epochs * enrichment_fraction * (args.acquisition_samples)*1.1 +args.init_samples)
     n_enriched_indices = int(enrichment_fraction*n_init_samples)
-
     if enrichment_fraction>0:
         samples_likely_to_have_entity = await strategy.get_enriched_data(n_needed=n_needed, features = pool_features)
-
-    print(samples_likely_to_have_entity)
     
     
     indices = strategy.init_labeled_data(n_sample=n_init_samples, samples_likely_to_have_entity = samples_likely_to_have_entity, 
