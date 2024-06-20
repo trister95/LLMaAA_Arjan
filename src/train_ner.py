@@ -6,6 +6,16 @@ from .utils import ugly_log
 import numpy as np
 from transformers import TrainingArguments, Trainer, DataCollatorForTokenClassification
 
+def filter_none_labels(dataset):
+    """
+    Filters out examples with None labels from the dataset.
+    """
+    def has_valid_labels(example):
+        # Check if the labels are not None
+        return example['labels'] is not None
+    
+    # Filter the dataset
+    return dataset.filter(has_valid_labels)
 
 def compute_metrics(p, label_array, log_file):
     predictions, labels = p
@@ -79,17 +89,15 @@ class CustomTrainer(Trainer):
             outputs = model(**inputs)
             return (outputs.loss, outputs) if return_outputs else outputs.loss
 
-
 def train_ner(args, train_dataset, dev_dataset, model, id2label, tokenizer):
+    train_dataset = filter_none_labels(train_dataset)
+    dev_dataset = filter_none_labels(dev_dataset)
+    
     max_index = max(id2label.keys())
     label_array = np.array([id2label[i] for i in range(max_index + 1)])
 
     data_collator = DataCollatorForTokenClassification(tokenizer)
     compute_metrics_with_id2label = partial(compute_metrics, label_array=label_array, log_file=args.log_file)
-
-    for e in train_dataset:
-        if 1 in e['labels']:
-            print(e)
 
     training_args = TrainingArguments(
         output_dir=args.save_path,
