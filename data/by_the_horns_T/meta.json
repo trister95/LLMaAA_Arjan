@@ -1,7 +1,7 @@
 {
   "tag2id": {
     "O": 0,
-    "Animals-Organism-Literal": 1,
+    "Animals-Organisms-Literal": 1,
     "Animals-Organisms-Symbolical": 2,
     "Animals-Organisms-Petrified": 3,
     "Animals-Parts-Literal": 4,
@@ -28,7 +28,7 @@
   },
   "tagset": [
     "O",
-    "Animals-Organism-Literal",
+    "Animals-Organisms-Literal",
     "Animals-Organisms-Symbolical",
     "Animals-Organisms-Petrified",
     "Animals-Parts-Literal",
