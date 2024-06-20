@@ -31,13 +31,13 @@ def knn_demo_retrieval(args):
     dir_path = os.path.join(dir_path, f'data/{args.dataset}')
 
     data = {split: load_data(os.path.join(dir_path, f'{split}.jsonl'))
-            for split in ['demo', 'test', 'train']}
+            for split in ['demo', 'test', 'train', 'holdout']}
     text = {split: [sample['text'] for sample in data[split]]
             for split in data}
     # compute similarity
     embed = {split: get_embeddings(args, text[split])
              for split in text}
-    for split in ['train', 'test']:
+    for split in ['train', 'test', 'holdout']:
         sim = get_cosine_similarity(embed[split], embed['demo'])
         scores, indices = sim.topk(k=args.topk, dim=-1)
         results = dict()
