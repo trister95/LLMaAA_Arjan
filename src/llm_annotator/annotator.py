@@ -2,7 +2,6 @@ import ujson as json
 import os
 import re
 import asyncio
-import aiohttp
 from func_timeout import func_set_timeout
 from openai import RateLimitError
 from langchain_core import prompts, output_parsers
