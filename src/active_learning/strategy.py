@@ -14,7 +14,7 @@ class Strategy(ABC):
         self.lab_data_mask = np.zeros(pool_size, dtype=bool)
         self.annotator = Annotator(engine, annotator_config_name)
         self.dataset = self.annotator.dataset
-        if self.dataset in ['en_conll03', 'planimals', 'animals_or_not', 'by_the_horns_T', 'by_the_horns_D']:
+        if self.dataset in ['en_conll03', 'planimals', 'animals_or_not', 'by_the_horns_D', 'by_the_horns_T']:
             self.task_type = 'ner'
         else:
             raise ValueError('Unknown dataset.')
