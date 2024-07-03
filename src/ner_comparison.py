@@ -49,7 +49,7 @@ def load_jsonl(file_path, key='tags'):
     with open(file_path) as f:
         return [json.loads(line)[key] for line in f]
 
-def calculate_weighted_f1(y_true, y_pred):
+def calculate_f1(y_true, y_pred, average='weighted', entity_only=False):
     # Debug prints
     print("y_true (first few):", y_true[:2])
     print("y_pred (first few):", y_pred[:2])
@@ -64,11 +64,20 @@ def calculate_weighted_f1(y_true, y_pred):
     # Get unique labels
     labels = sorted(set(y_true_flat) | set(y_pred_flat))
     
+    if entity_only:
+        # Remove 'O' label and filter out 'O' predictions
+        labels = [label for label in labels if label != 'O']
+        y_true_filtered = [y for y in y_true_flat if y != 'O']
+        y_pred_filtered = [y for y, t in zip(y_pred_flat, y_true_flat) if t != 'O']
+    else:
+        y_true_filtered = y_true_flat
+        y_pred_filtered = y_pred_flat
+
     print("Unique labels:", labels)
 
-    return f1_score(y_true_flat, y_pred_flat, labels=labels, average='weighted')
+    return f1_score(y_true_filtered, y_pred_filtered, labels=labels, average=average)
 
-def pairwise_ner_comparison(pred_labels_list, method_names, output_csv):
+def pairwise_ner_comparison(pred_labels_list, method_names, output_csv, f1_type='weighted', entity_only=False):
     n_methods = len(method_names)
     results_mean = np.zeros((n_methods, n_methods))
     results_std = np.zeros((n_methods, n_methods))
@@ -79,7 +88,7 @@ def pairwise_ner_comparison(pred_labels_list, method_names, output_csv):
             scores = []
             for pred1_list in pred_labels_list[method1]:
                 for pred2_list in pred_labels_list[method2]:
-                    scores.append(calculate_weighted_f1(pred1_list, pred2_list))
+                    scores.append(calculate_f1(pred1_list, pred2_list, average=f1_type, entity_only=entity_only))
             results_mean[i, j] = np.mean(scores)
             results_std[i, j] = np.std(scores)
 
@@ -97,22 +106,21 @@ def pairwise_ner_comparison(pred_labels_list, method_names, output_csv):
 
 def main(args):
     # Load data
-    predictor1 = NERPredictor(args.model1)
-    predictor2 = NERPredictor(args.model2)
+    predictors1 = [NERPredictor(model_name) for model_name in args.models1]
+    predictors2 = [NERPredictor(model_name) for model_name in args.models2]
 
     # Load human annotations (which also serve as holdout data)
     hum1_predictions = load_jsonl(args.human_annotations1, 'tags')
     hum2_predictions = load_jsonl(args.human_annotations2, 'tags')
     texts = [json.loads(line)['text'] for line in open(args.human_annotations1)]
 
-    # Predict using LLLMaAA models (5 times each)
-    lllmaaa1_predictions = [[predictor1.predict(text) for text in texts] for _ in range(5)]
-    lllmaaa2_predictions = [[predictor2.predict(text) for text in texts] for _ in range(5)]
+    # Predict using LLLMaAA models (5 different predictors each)
+    lllmaaa1_predictions = [[predictor.predict(text) for text in texts] for predictor in predictors1]
+    lllmaaa2_predictions = [[predictor.predict(text) for text in texts] for predictor in predictors2]
 
     #write the variable llmaaa1_predictions to txt file
     with open('llmaaa1_predictions.txt', 'w') as f:
         f.write(str(lllmaaa1_predictions))
-
     # Load other predictions
     def load_multiple_files(folder_path):
         file_pattern = os.path.join(folder_path, '*.jsonl')
@@ -140,26 +148,34 @@ def main(args):
 
     method_names = list(pred_labels_list.keys())
 
-    results_mean, results_std = pairwise_ner_comparison(pred_labels_list, method_names, args.output_csv)
+    results_mean, results_std = pairwise_ner_comparison(
+        pred_labels_list, 
+        method_names, 
+        args.output_csv, 
+        args.f1_type, 
+        args.entity_only
+    )
 
-    print("\nWeighted F1 Score Matrix (Mean):")
+    f1_description = f"{args.f1_type.capitalize()} {'Entity-Only ' if args.entity_only else ''}F1 Score"
+    print(f"\n{f1_description} Matrix (Mean):")
     print(np.array2string(results_mean, precision=4, suppress_small=True))
-    print("\nWeighted F1 Score Matrix (Standard Deviation):")
+    print(f"\n{f1_description} Matrix (Standard Deviation):")
     print(np.array2string(results_std, precision=4, suppress_small=True))
     print("\n")
 
     print(f"Results have been saved to '{args.output_csv}'")
 
     # Save numpy arrays
-    np.save(args.output_mean, results_mean)
-    np.save(args.output_std, results_std)
-    print(f"Mean results saved to '{args.output_mean}.npy'")
-    print(f"Standard deviation results saved to '{args.output_std}.npy'")
+    output_suffix = f"{args.f1_type}_{'entity_only' if args.entity_only else 'all_labels'}"
+    np.save(f"{args.output_mean}_{output_suffix}", results_mean)
+    np.save(f"{args.output_std}_{output_suffix}", results_std)
+    print(f"Mean results saved to '{args.output_mean}_{output_suffix}.npy'")
+    print(f"Standard deviation results saved to '{args.output_std}_{output_suffix}.npy'")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="NER Comparison Tool")
-    parser.add_argument("--model1", default="ArjanvD95/by_the_horns_D42G", help="Path to model1")
-    parser.add_argument("--model2", default="ArjanvD95/by_the_horns_T42G", help="Path to model2")
+    parser.add_argument("--models1", nargs=5, required=True, help="Paths to 5 models for predictor1")
+    parser.add_argument("--models2", nargs=5, required=True, help="Paths to 5 models for predictor2")
     parser.add_argument("--human_annotations1", required=True, help="Path to first set of human annotations")
     parser.add_argument("--human_annotations2", required=True, help="Path to second set of human annotations")
     parser.add_argument("--direct_no_demo", required=True, help="Path to folder containing direct_no_demo predictions")
@@ -168,6 +184,8 @@ if __name__ == "__main__":
     parser.add_argument("--output_csv", default="comparison_results.csv", help="Path to output CSV file")
     parser.add_argument("--output_mean", default="results_mean", help="Path to output mean numpy array (without .npy extension)")
     parser.add_argument("--output_std", default="results_std", help="Path to output std numpy array (without .npy extension)")
-    
+    parser.add_argument("--f1_type", choices=['weighted', 'macro', 'micro'], default='weighted', help="Type of F1 score to calculate (weighted, macro, or micro)")
+    parser.add_argument("--entity_only", action="store_true", help="Calculate F1 score for entity labels only (excluding 'O' label)")
+
     args = parser.parse_args()
     main(args)
